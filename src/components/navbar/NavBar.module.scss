@@ -17,6 +17,8 @@
   padding: 0;
   margin-left: 2rem;
   vertical-align: middle;
+  -webkit-transition: none !important;
+  transition: none !important;
 
   @include themify() {
     color: themed($text-primary) !important;

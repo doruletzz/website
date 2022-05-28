@@ -13,35 +13,38 @@ const NavBar = () => {
 
   return (
     <div className={styles[`theme__${ThemeType[type]}`]}>
-      <Navbar className={styles.navbar} sticky="top">
+      <Navbar className={styles.navbar} sticky="top" expand="sm">
         <Container fluid className={styles.container}>
           <Navbar.Brand className={styles.brand}>LOGO</Navbar.Brand>
-          <Nav>
-            <Nav.Link href="/resume" className={styles.navlink}>
-              resume
-            </Nav.Link>
+          <Navbar.Toggle />
+          <Navbar.Collapse>
+            <Nav>
+              <Nav.Link href="/resume" className={styles.navlink}>
+                resume
+              </Nav.Link>
 
-            <Nav.Link href="/works" className={styles.navlink}>
-              works
-            </Nav.Link>
+              <Nav.Link href="/works" className={styles.navlink}>
+                works
+              </Nav.Link>
 
-            <Nav.Link href="/resume" className={styles.navlink}>
-              blog
-            </Nav.Link>
+              <Nav.Link href="/resume" className={styles.navlink}>
+                blog
+              </Nav.Link>
 
-            <Nav.Link
-              onClick={() => {
-                dispatch(
-                  setTheme(
-                    (type.valueOf() + 1) % (Object.keys(ThemeType).length / 2)
-                  )
-                );
-              }}
-              className={styles.navlink}
-            >
-              {ThemeType[type]}
-            </Nav.Link>
-          </Nav>
+              <Nav.Link
+                onClick={() => {
+                  dispatch(
+                    setTheme(
+                      (type.valueOf() + 1) % (Object.keys(ThemeType).length / 2)
+                    )
+                  );
+                }}
+                className={styles.navlink}
+              >
+                {ThemeType[type]}
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
     </div>

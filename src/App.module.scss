@@ -1,9 +1,20 @@
 @use "./styles/theme" as *;
 
+::selection {
+  @include themify() {
+    background-color: themed("text-secondary");
+    color: themed("background-tertiary");
+  }
+}
+
 .background {
   min-height: 100vh;
+  min-width: 100vw;
 
   @include themify() {
+    font-family: $font-family-primary;
+    font-weight: 400;
+    color: themed($text-primary);
     background-color: themed($background-primary);
   }
 }

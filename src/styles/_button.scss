@@ -1,0 +1,63 @@
+@use "./theme" as *;
+
+@mixin custom_button_primary($background_color, $content_color, $border_color) {
+  -webkit-transition: none !important;
+  transition: none !important;
+
+  background-color: $background_color;
+
+  font-family: $font-family-primary;
+  font-size: 1rem;
+
+  border: 0.125rem solid $border_color;
+  border-radius: 0px;
+  box-sizing: border-box;
+  box-shadow: 0px 0.125rem 0px $border_color;
+
+  color: $content_color;
+
+  &:hover,
+  &:focus {
+    color: $content_color;
+
+    border: 0.125rem solid $border_color;
+    border-radius: 0px;
+    box-sizing: border-box;
+    box-shadow: 0px 0.25rem 0px $border_color !important;
+
+    background-color: $highlight-secondary;
+  }
+}
+
+@mixin custom_button_secundary(
+  $background_color,
+  $content_color,
+  $border_color
+) {
+  -webkit-transition: none !important;
+  transition: none !important;
+
+  background-color: $background_color;
+
+  font-family: $font-family-primary;
+  font-size: 1rem;
+
+  border: 0rem solid;
+  border-radius: 0px;
+  box-sizing: border-box;
+  box-shadow: 0px 0rem 0px $border_color;
+
+  color: $content_color;
+
+  &:hover,
+  &:focus {
+    color: $highlight-secondary;
+    background-color: $background_color;
+
+    border: 0rem solid $highlight-primary;
+    border-radius: 0px;
+    box-sizing: border-box;
+    box-shadow: 0px 0.125rem 0px $highlight-primary !important;
+    // background-color: $border_color;
+  }
+}

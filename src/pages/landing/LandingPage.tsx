@@ -1,7 +1,14 @@
 import React from "react";
+import HeroPage from "./hero/HeroPage";
+import WorkPage from "./works/WorkPage";
 
 const LandingPage = () => {
-  return <div>LandingPage</div>;
+  return (
+    <div>
+      <HeroPage />
+      <WorkPage />
+    </div>
+  );
 };
 
 export default LandingPage;
