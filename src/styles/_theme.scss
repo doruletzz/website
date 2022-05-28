@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500&family=JetBrains+Mono:ital,wght@0,300;0,400;0,700;0,800;1,300;1,400;1,700;1,800&family=Roboto:wght@300;400;700&display=swap");
+
+$highlight-primary: #fcd925;
+$highlight-secondary: #ffb016;
+
+$font-family-primary: "Jetbrains Mono";
+$font-family-content: "Roboto";
+$font-family-secondary: "Fredoka";
+
+$enable-rounded: false;
+
+$text-primary--light: #183153;
+$text-secondary--light: #2a4758;
+
+$text-primary--dark: #eaf0f3;
+$text-secondary--dark: #c1e0f0;
+$text-tertiary--dark: #c1e0f0;
+
+$background-primary--light: #fafafa;
+$background-secondary--light: #a3cbdf;
+$background-tertiary--light: #dae3e3;
+
+$background-primary--dark: #1f2c3d;
+$background-secondary--dark: #182434;
+$background-tertiary--dark: #354055;
+
+$background-primary: "background-primary";
+$background-secondary: "background-secondary";
+$background-tertiary: "background-tertiary";
+
+$text-primary: "text-primary";
+$text-secondary: "text-secondary";
+
+$border_color: "border-color";
+
+$themes: (
+  default: (
+    background-primary: $background-primary--light,
+    background-secondary: $background-secondary--light,
+    background-tertiary: $background-tertiary--light,
+    text-primary: $text-primary--light,
+    text-secondary: $text-secondary--light,
+    border-color: $text-primary--light,
+  ),
+  dark: (
+    background-primary: $background-primary--dark,
+    background-secondary: $background-secondary--dark,
+    background-tertiary: $background-tertiary--dark,
+    text-primary: $text-primary--dark,
+    text-secondary: $text-secondary--dark,
+    border-color: $text-tertiary--dark,
+  ),
+);
+
+@mixin themify() {
+  @each $theme, $map in $themes {
+    $theme-map: $map !global;
+    .theme__#{$theme} & {
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+    $theme-map: null !global;
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}

@@ -1,0 +1,9 @@
+@use "./styles/theme" as *;
+
+.background {
+  min-height: 100vh;
+
+  @include themify() {
+    background-color: themed($background-primary);
+  }
+}
