@@ -1,0 +1,44 @@
+@use "../../../styles/theme" as *;
+
+@use "../../../styles/button" as *;
+
+@use "../../../styles/card" as *;
+
+.header {
+  margin-bottom: 1.125rem;
+  font-family: $font-family-secondary;
+  font-weight: 400;
+
+  font-size: 1.125rem;
+
+  @include themify() {
+    color: themed($text-secondary);
+  }
+}
+
+.heading {
+  margin-bottom: 1.125rem;
+  font-family: $font-family-primary;
+  font-weight: 700;
+  font-size: 2.25rem;
+
+  @include themify() {
+    color: themed($text-primary);
+  }
+}
+
+.content {
+  margin-bottom: 1.125rem;
+  font-family: $font-family-content;
+  font-weight: 400;
+
+  font-size: 1.125rem;
+
+  @include themify() {
+    color: themed($text-secondary);
+  }
+}
+
+.wrapper {
+  margin-bottom: 4rem !important;
+}

@@ -1,0 +1,61 @@
+@use "../../styles/button" as *;
+@use "../../styles/theme" as *;
+
+.blog_post_card {
+  @include themify() {
+    @include custom_button_primary(
+      themed($background-tertiary),
+      themed($text-primary),
+      themed($border_color)
+    );
+  }
+
+  // &:hover{
+  //     .title{
+  //         color: $highlight-primary !important;
+  //     }
+
+  //     .subtitle{
+  //         color: $highlight-secondary !important;
+  //     }
+
+  //     .content{
+  //             color: $highlight-secondary !important;
+  //     }
+  // }
+
+  .title {
+    font-family: $font-family-primary;
+    font-weight: 700;
+
+    font-size: 1.5rem;
+
+    @include themify() {
+      color: themed($text-primary);
+    }
+  }
+
+  .subtitle {
+    font-family: $font-family-content;
+    font-weight: 400;
+
+    font-size: 0.75rem;
+
+    @include themify() {
+      color: themed($text-secondary);
+    }
+  }
+
+  .content {
+    margin-top: 0.375rem;
+
+    font-family: $font-family-content;
+    font-weight: 400;
+
+    font-size: 1.125rem;
+
+    @include themify() {
+      color: themed($text-secondary);
+    }
+  }
+}

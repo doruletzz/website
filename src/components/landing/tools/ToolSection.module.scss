@@ -1,0 +1,123 @@
+@use "../../../styles/theme" as *;
+
+@use "../../../styles/card" as *;
+@use "../../../styles/button" as *;
+
+.card {
+  padding: 0;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 2.25rem;
+
+  @include themify() {
+    @include custom_card(themed($background-tertiary), themed($border_color));
+  }
+}
+
+.text {
+  @media (max-width: 992px) {
+    order: 1;
+  }
+}
+
+.cards {
+  @media (max-width: 992px) {
+    order: 2;
+  }
+}
+
+.card_title {
+  padding: 0.5rem 0;
+  text-align: left;
+  font-family: $font-family-primary;
+  font-size: 1.25rem !important;
+  font-weight: 700;
+
+  @include themify() {
+    color: themed($text-primary);
+  }
+}
+
+.card_text {
+  @include themify() {
+    color: themed($text-secondary);
+  }
+  text-align: left;
+  font-size: 1rem;
+  font-family: $font-family-content;
+
+  height: 6rem;
+}
+
+.title {
+  padding: 0.5rem 0;
+  text-align: left;
+  font-family: $font-family-primary;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.text {
+  padding: 0.5rem 0;
+  text-align: left;
+  font-size: 1rem;
+  font-family: $font-family-content;
+}
+
+.header {
+  @include themify() {
+    color: themed($text-secondary) !important;
+  }
+}
+
+.heading {
+  font-family: $font-family-primary;
+  font-weight: 700;
+
+  font-size: 2.25rem;
+  @include themify() {
+    color: themed($text-primary);
+  }
+
+  margin-bottom: 1.125rem;
+  .highlighted {
+    color: $highlight-secondary !important;
+  }
+}
+
+.content {
+  font-family: $font-family-content;
+
+  font-size: 1rem;
+  @include themify() {
+    color: themed($text-secondary);
+  }
+
+  .highlighted {
+    color: $highlight-secondary !important;
+  }
+}
+
+.card_icon {
+  object-fit: contain;
+  height: 5rem;
+  width: auto;
+  align-items: center;
+  margin: 2rem auto 3rem auto;
+
+  @media (max-width: 768px) {
+    height: 12rem;
+  }
+}
+
+.btn_primary {
+  margin-bottom: 2.25rem;
+
+  @include themify() {
+    @include custom_button_primary(
+      themed($background-tertiary),
+      themed($text-primary),
+      themed($border_color)
+    );
+  }
+}

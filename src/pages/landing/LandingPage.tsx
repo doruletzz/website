@@ -1,12 +1,16 @@
 import React from "react";
-import HeroPage from "./hero/HeroPage";
-import WorkPage from "./works/WorkPage";
+import HeroSection from "../../components/landing/hero/HeroSection";
+import ToolSection from "../../components/landing/tools/ToolSection";
+import BlogSection from "./blog/BlogSection";
+import WorkSection from "./works/WorkSection";
 
 const LandingPage = () => {
   return (
     <div>
-      <HeroPage />
-      <WorkPage />
+      <HeroSection />
+      <WorkSection />
+      <ToolSection />
+      <BlogSection />
     </div>
   );
 };

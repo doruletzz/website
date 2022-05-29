@@ -1,0 +1,50 @@
+import React from "react";
+import { Button, Col, Container, Row } from "react-bootstrap";
+import { FaHouseUser } from "react-icons/fa";
+import Header from "../../Header";
+import { useAppSelector } from "../../../features/app/hooks";
+import { ThemeType } from "../../../types/theme";
+import HeroIllustration from "./HeroIllustration";
+
+import styles from "./HeroSection.module.scss";
+
+const HeroSection = () => {
+  const theme = useAppSelector((state) => state.theme);
+
+  return (
+    <section id="hero" className={styles[`theme__${ThemeType[theme.type]}`]}>
+      <Container fluid className="m-0 p-0">
+        <Row>
+          <Col xl={9} lg={7} md={6} sm={12} className={styles.content}>
+            <div className={styles.header}>
+              <div>
+                <Header
+                  content={"LOCATED IN CLUJ-NAPOCA, ROMANIA"}
+                  icon={<FaHouseUser />}
+                  sectionLink="#hero"
+                />
+              </div>
+            </div>
+            <div>
+              <h1 className={styles.heading}>Hello World!</h1>
+              <h3 className={styles.sub_heading}>
+                i'm dorletz, a <b className={styles.highlighted}>passionate</b>{" "}
+                frontend developer
+              </h3>
+            </div>
+
+            <Button className={styles.btn_primary}>View Resume</Button>
+            <Button className={styles.btn_secundary}>Contact Me</Button>
+          </Col>
+          <Col xl={3} lg={5} md={6} sm={6}>
+            <div className={styles.hero_image}>
+              <HeroIllustration width={"100%"} />
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </section>
+  );
+};
+
+export default HeroSection;

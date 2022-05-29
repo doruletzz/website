@@ -1,10 +1,23 @@
-export interface IPost {
-  id: number;
+import { IEntity } from "../entity";
+import { IError } from "../utils/error";
+
+export interface IPost extends IEntity {
   slug: string;
+  coverImg?: string;
   title: string;
   summary: string;
   content: string;
-  user: string;
-  createdAt?: Date | undefined;
-  updatedAt?: Date | undefined;
+  user?: string;
+  tags?: Array<Tag>;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
+
+export enum Tag {
+  programming,
+  design,
+  react,
+  books,
+}
+
+export interface PostError extends IError {}

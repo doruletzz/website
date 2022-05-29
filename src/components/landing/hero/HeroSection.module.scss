@@ -1,0 +1,104 @@
+@use "../../../styles/theme" as *;
+
+@use "../../../styles/button" as *;
+
+.content {
+  padding-top: 8rem;
+  @media (max-width: 479px) {
+    text-align: center;
+
+    padding-top: 0;
+  }
+}
+
+.header {
+  margin-top: 2rem;
+
+  @include themify() {
+    color: themed($text-secondary);
+  }
+
+  @media (max-width: 479px) {
+    font-size: 0.75rem !important;
+  }
+}
+
+.sub_heading {
+  font-family: $font-family-primary;
+
+  font-size: 1.25em;
+  @include themify() {
+    color: themed($text-primary);
+  }
+
+  margin-bottom: 1.5rem;
+
+  .highlighted {
+    color: $highlight-secondary !important;
+  }
+
+  @media (max-width: 479px) {
+    font-size: 1rem;
+  }
+}
+
+.hero_image {
+  padding-top: 6rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+
+  padding-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    text-align: center;
+
+    visibility: hidden;
+    display: none;
+    opacity: 0;
+    padding-top: 0;
+  }
+}
+
+.heading {
+  display: block;
+  font-family: $font-family-primary;
+  font-weight: 700;
+  font-style: oblique;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  font-size: 6.5rem;
+  @include themify() {
+    color: themed($text-primary);
+  }
+
+  @media (max-width: 479px) {
+    font-size: 6rem;
+  }
+}
+
+.btn_primary {
+  font-family: $font-family-secondary;
+  @include themify() {
+    @include custom_button_primary(
+      themed($background-tertiary),
+      themed($text-primary),
+      themed($border_color)
+    );
+  }
+
+  margin-right: 4rem;
+}
+
+.btn_secundary {
+  @include themify() {
+    @include custom_button_secundary(
+      themed($background-primary),
+      themed($text-primary),
+      themed($border_color)
+    );
+  }
+}

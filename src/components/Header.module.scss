@@ -1,0 +1,42 @@
+@use "../styles/card" as *;
+
+@use "../styles/theme" as *;
+.div {
+  display: inline-block;
+  margin-bottom: -2rem !important;
+}
+
+.icon {
+  padding-left: 1rem;
+  margin-bottom: 1rem !important;
+
+  text-decoration: none;
+
+  color: $highlight-secondary !important;
+
+  &:hover {
+    color: $highlight-primary !important;
+  }
+
+  @media (max-width: 479px) {
+    font-size: 1rem !important;
+  }
+}
+
+.text {
+  display: flex;
+  vertical-align: middle;
+
+  font-family: $font-family-secondary !important;
+  font-weight: 400 !important;
+
+  font-size: 1.125rem !important;
+
+  margin-bottom: 0.5rem !important;
+
+  margin-right: 1rem !important;
+
+  @media (max-width: 479px) {
+    font-size: 1rem !important;
+  }
+}

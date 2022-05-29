@@ -13,21 +13,21 @@ const NavBar = () => {
 
   return (
     <div className={styles[`theme__${ThemeType[type]}`]}>
-      <Navbar className={styles.navbar} sticky="top" expand="sm">
-        <Container fluid className={styles.container}>
+      <Navbar className={styles.navbar} fixed="top" expand="sm">
+        <Container className={styles.container}>
           <Navbar.Brand className={styles.brand}>LOGO</Navbar.Brand>
           <Navbar.Toggle />
-          <Navbar.Collapse>
+          <Navbar.Collapse className="justify-content-end">
             <Nav>
-              <Nav.Link href="/resume" className={styles.navlink}>
-                resume
+              <Nav.Link href="/about" className={styles.navlink}>
+                about
               </Nav.Link>
 
               <Nav.Link href="/works" className={styles.navlink}>
                 works
               </Nav.Link>
 
-              <Nav.Link href="/resume" className={styles.navlink}>
+              <Nav.Link href="/blog" className={styles.navlink}>
                 blog
               </Nav.Link>
 

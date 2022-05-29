@@ -2,9 +2,11 @@ import { configureStore, Action } from "@reduxjs/toolkit";
 import { ThunkAction } from "redux-thunk";
 
 import themeReducer from "../theme/slice";
+import blogReducer from "../blog/slice";
 
 export const store = configureStore({
   reducer: {
+    blog: blogReducer,
     theme: themeReducer,
   },
   middleware: (getDefaultMiddleware) =>

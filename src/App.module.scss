@@ -7,9 +7,12 @@
   }
 }
 
+section {
+  padding-top: 6rem;
+}
+
 .background {
   min-height: 100vh;
-  min-width: 100vw;
 
   @include themify() {
     font-family: $font-family-primary;

@@ -6,6 +6,8 @@ import { useAppSelector } from "./features/app/hooks";
 import { Container } from "react-bootstrap";
 import { ThemeType } from "./types/theme";
 
+import { Routes, Route } from "react-router-dom";
+
 function App() {
   const { type } = useAppSelector((state) => state.theme);
 
@@ -14,7 +16,9 @@ function App() {
       <div className={styles.background}>
         <Container>
           <NavBar />
-          <LandingPage />
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+          </Routes>
         </Container>
       </div>
     </div>

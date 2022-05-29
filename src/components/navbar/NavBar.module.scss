@@ -7,9 +7,9 @@
 
   font-family: $font-family-primary;
 
-  .container {
-    margin: 0;
-    padding: 0;
+  @include themify() {
+    background-color: themed($background-primary) !important;
+    background-opacity: 0.4;
   }
 }
 
