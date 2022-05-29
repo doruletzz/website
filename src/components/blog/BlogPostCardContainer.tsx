@@ -24,7 +24,7 @@ const BlogPostCardContainer = () => {
     <Container fluid className="m-0 p-0">
       {posts.map(({ title, summary, createdAt, slug }, idx) => (
         <Row key={idx} className={styles.blog_post_card}>
-          <Link to={"blog/" + slug}>
+          <Link to={"/blog/" + slug}>
             <BlogPostCard
               title={title}
               summary={summary}

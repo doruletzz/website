@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../features/app/hooks";
 import { setTheme } from "../../features/theme/slice";
 import { ThemeType, ITheme } from "../../types/theme";
@@ -15,19 +16,21 @@ const NavBar = () => {
     <div className={styles[`theme__${ThemeType[type]}`]}>
       <Navbar className={styles.navbar} fixed="top" expand="sm">
         <Container className={styles.container}>
-          <Navbar.Brand className={styles.brand}>LOGO</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/home" className={styles.brand}>
+            dor-
+          </Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
             <Nav>
-              <Nav.Link href="/about" className={styles.navlink}>
+              <Nav.Link as={Link} to="/about" className={styles.navlink}>
                 about
               </Nav.Link>
 
-              <Nav.Link href="/works" className={styles.navlink}>
+              <Nav.Link as={Link} to="/works" className={styles.navlink}>
                 works
               </Nav.Link>
 
-              <Nav.Link href="/blog" className={styles.navlink}>
+              <Nav.Link as={Link} to="/blog" className={styles.navlink}>
                 blog
               </Nav.Link>
 

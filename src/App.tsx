@@ -6,7 +6,8 @@ import { useAppSelector } from "./features/app/hooks";
 import { Container } from "react-bootstrap";
 import { ThemeType } from "./types/theme";
 
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
+import BlogPost from "./components/blog/BlogPost";
 
 function App() {
   const { type } = useAppSelector((state) => state.theme);
@@ -17,7 +18,9 @@ function App() {
         <Container>
           <NavBar />
           <Routes>
-            <Route path="/" element={<LandingPage />} />
+            <Route path="/home" element={<LandingPage />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/" element={<Navigate to="/home" />} />
           </Routes>
         </Container>
       </div>
