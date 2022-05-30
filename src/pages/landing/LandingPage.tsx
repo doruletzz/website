@@ -13,8 +13,8 @@ const LandingPage = () => {
       <HeroSection />
       <WorkSection />
       <ToolSection />
-      <BlogSection />
       <ContactSection />
+      <BlogSection />
     </div>
   );
 };

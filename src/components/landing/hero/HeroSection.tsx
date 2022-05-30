@@ -36,15 +36,15 @@ const HeroSection = () => {
             </div>
 
             <Button
-              onClick={() => navigate("/resume")}
+              onClick={() =>
+                window.open("https://resume.dorletz.com", "_blank")
+              }
               className={styles.btn_primary}
             >
               View Resume
             </Button>
             <Button
-              onClick={() =>
-                window.location.assign("#contact", { replace: true })
-              }
+              onClick={() => window.location.assign("#contact")}
               className={styles.btn_secundary}
             >
               Contact Me

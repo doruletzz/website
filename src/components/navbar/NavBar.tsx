@@ -15,7 +15,12 @@ const NavBar = () => {
     <div className={styles[`theme__${ThemeType[type]}`]}>
       <Navbar className={styles.navbar} fixed="top" expand="sm">
         <Container className={styles.container}>
-          <Navbar.Brand as={Link} to="/home" className={styles.brand}>
+          <Navbar.Brand
+            as={Link}
+            to="/home"
+            onClick={() => window.scrollTo({ top: 0 })}
+            className={styles.brand}
+          >
             dor-
           </Navbar.Brand>
           <Navbar.Toggle />
