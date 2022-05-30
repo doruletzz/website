@@ -35,37 +35,41 @@ working demo:
 1. Frontend
 
    1. Landing Page
-      - Contact Form
-      - About Text
-      - Blog Text
-      - Implement every button
+      - [ ] Contact Form
+      - [ ] About Text
+      - [ ] Blog Text
+      - [ ] Implement every button
    2. Navbar
-      - Icons for mobile use
-      - Animation for navbrand
-      - Icon for style change
+      - [ ] Icons for mobile use
+      - [ ] Animation for navbrand
+      - [ ] Icon for style change
    3. Redirect Pages
-      - Redirect to Error Page (404)
+      - [ ] Redirect to Error Page (404)
    4. Blog Page
-      - Blog Page Container
-      - Blog Display Page w/ working examples and dates
+      - [ ] Blog Page Container
+      - [ ] Blog Display Page w/ working examples and dates
    5. Works Page
-      - Work Page Container
-      - 2 work page examples
+      - [ ] Work Page Container
+      - [ ] 2 work page examples
    6. About Page
-      - design in figma
-      - 1 Page with details
+      - [ ] design in figma
+      - [ ] 1 Page with details
    7. Footer
-      - navlinks to every page
-      - contact component
+
+      - [ ] navlinks to every page
+      - [ ] contact component
+
+   8. ~~Todo~~
+      - [✓] write todo list
 
 2. Design
 
    1. Animations
-      - brand animation
+      - [ ] brand animation
    2. Illustration
-      - Tools Illustration
-      - Blog Illustration
-      - Form Illustration
+      - [ ] Tools Illustration
+      - [ ] Blog Illustration
+      - [ ] Form Illustration
 
 3. Backend
-   1. Pagination for Post Fetching
+   1. [ ] Pagination for Post Fetching
