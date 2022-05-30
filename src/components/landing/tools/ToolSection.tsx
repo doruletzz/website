@@ -37,7 +37,6 @@ const ToolSection = () => {
       <div className={styles[`theme__${ThemeType[theme.type]}`]}>
         <Container fluid className="p-0 m-0">
           <Row>
-            <div className={styles.bg} />
             <Col lg={7} xs={12} className={styles.cards}>
               <Row>
                 <Col lg={4} md={4} xs={12}>

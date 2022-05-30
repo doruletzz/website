@@ -3,7 +3,7 @@
 @use "../../../styles/button" as *;
 
 .content {
-  padding-top: 8rem;
+  padding-top: 2rem;
   @media (max-width: 479px) {
     text-align: center;
 
@@ -43,7 +43,6 @@
 }
 
 .hero_image {
-  padding-top: 6rem;
   display: block;
   margin-left: auto;
   margin-right: auto;

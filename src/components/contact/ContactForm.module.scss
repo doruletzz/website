@@ -1,0 +1,69 @@
+@use "../../styles/theme" as *;
+
+@use "../../styles/button" as *;
+
+.form {
+  background-color: red;
+  border-radius: 0px !important;
+  box-sizing: border-box;
+  @include themify() {
+    background-color: themed($background-primary);
+    color: themed($text-primary);
+    border: 0.125rem solid themed($text-primary) !important;
+    box-shadow: 0px 0.25rem 0px themed($text-primary);
+  }
+  padding: 2rem 1rem;
+
+  .group {
+    margin-bottom: 2rem;
+
+    .label {
+      .control {
+        border-radius: 0px !important;
+        box-sizing: border-box;
+        @include themify() {
+          background-color: themed($background-tertiary);
+          border: 0.125rem solid themed(text-secondary) !important;
+          box-shadow: 0px 0.25rem 0px themed(text-secondary);
+
+          &:active,
+          &:focus {
+            border: 0.125rem solid themed($text-secondary) !important;
+            box-shadow: 0px 0.5rem 0px themed($text-secondary);
+          }
+        }
+        padding-top: 2rem;
+      }
+
+      .text_area_control {
+        padding-top: 2rem;
+        height: 12rem;
+
+        border-radius: 0px !important;
+        box-sizing: border-box;
+
+        @include themify() {
+          background-color: themed($background-tertiary);
+          border: 0.125rem solid themed($text-secondary) !important;
+          box-shadow: 0px 0.25rem 0px themed($text-secondary);
+
+          &:active,
+          &:focus {
+            border: 0.125rem solid themed($text-secondary) !important;
+            box-shadow: 0px 0.5rem 0px themed($text-secondary);
+          }
+        }
+      }
+    }
+  }
+
+  .button {
+    @include themify() {
+      @include custom_button_primary(
+        themed($background-tertiary),
+        themed($text-primary),
+        themed($border_color)
+      );
+    }
+  }
+}
