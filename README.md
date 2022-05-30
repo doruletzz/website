@@ -59,8 +59,8 @@ working demo:
       - [ ] navlinks to every page
       - [ ] contact component
 
-   8. ~~Todo~~
-      - [✓] write todo list
+   8. Todo
+      - [x] write todo list
 
 2. Design
 
