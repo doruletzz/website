@@ -2,8 +2,14 @@
 
 **Personal Website Application for Project Showcase and Blogging**
 
+---
+
 working demo:
 **[dorletz](http://dorletz.com)**
+
+---
+
+current server side implementation: **[server](https://github.com/doruletzz/blog-server)**
 
 ---
 
@@ -35,7 +41,7 @@ working demo:
 1. Frontend
 
    1. Landing Page
-      - [ ] Contact Form
+      - [x] Contact Form
       - [ ] About Text
       - [ ] Blog Text
       - [ ] Implement every button

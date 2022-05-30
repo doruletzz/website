@@ -110,15 +110,14 @@ const ToolSection = () => {
                   sectionLink="#tools"
                 />
               </div>
-              <h4> </h4>
               <h1 className={styles.heading}>
                 Technologies that i use day to day
               </h1>
-              <h5 className={styles.content}>
+              <p className={styles.content}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus
                 sed integer pulvinar quam scelerisque. Arcu hendrerit ut aliquet
                 lorem vitae sit. Ut ornare sed iaculis blandit nulla
-              </h5>
+              </p>
               <Button className={styles.btn_primary}>Hire me</Button>
             </Col>
           </Row>

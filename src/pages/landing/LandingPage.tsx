@@ -10,12 +10,11 @@ import styles from "./LandingPage.module.scss";
 const LandingPage = () => {
   return (
     <div className={styles.container}>
-      <ContactSection />
-
-      {/* <HeroSection />
+      <HeroSection />
       <WorkSection />
       <ToolSection />
-      <BlogSection /> */}
+      <BlogSection />
+      <ContactSection />
     </div>
   );
 };

@@ -7,8 +7,10 @@ import { ThemeType } from "../../../types/theme";
 import HeroIllustration from "./HeroIllustration";
 
 import styles from "./HeroSection.module.scss";
+import { useNavigate } from "react-router";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   const theme = useAppSelector((state) => state.theme);
 
   return (
@@ -33,8 +35,20 @@ const HeroSection = () => {
               </h3>
             </div>
 
-            <Button className={styles.btn_primary}>View Resume</Button>
-            <Button className={styles.btn_secundary}>Contact Me</Button>
+            <Button
+              onClick={() => navigate("/resume")}
+              className={styles.btn_primary}
+            >
+              View Resume
+            </Button>
+            <Button
+              onClick={() =>
+                window.location.assign("#contact", { replace: true })
+              }
+              className={styles.btn_secundary}
+            >
+              Contact Me
+            </Button>
           </Col>
           <Col xl={3} lg={5} md={6} sm={6}>
             <div className={styles.hero_image}>

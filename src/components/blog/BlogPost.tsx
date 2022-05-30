@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row, Spinner } from "react-bootstrap";
 import { useParams } from "react-router";
 import { useAppDispatch, useAppSelector } from "../../features/app/hooks";
 import { getAllPosts } from "../../features/blog/slice";
@@ -23,6 +23,10 @@ const BlogPost = () => {
       setPost(posts.find((post) => post.slug === slug));
     }
   }, [posts]);
+
+  if (isFetching) return <Spinner animation="border" />;
+
+  if (error) return <p>{error.message}</p>;
 
   return (
     <>

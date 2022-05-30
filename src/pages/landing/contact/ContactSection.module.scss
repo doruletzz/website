@@ -1,0 +1,38 @@
+@use "../../../styles/theme" as *;
+@use "../../../styles/button" as *;
+
+.heading {
+  margin-bottom: 1.125rem;
+  font-family: $font-family-primary;
+  font-weight: 700;
+  font-size: 2.25rem;
+
+  @include themify() {
+    color: themed($text-primary);
+  }
+}
+
+.content {
+  margin-bottom: 1.125rem;
+  font-family: $font-family-content;
+  font-weight: 400;
+
+  font-size: 1.125rem;
+
+  @include themify() {
+    color: themed($text-secondary);
+  }
+}
+
+.button {
+  font-family: $font-family-secondary;
+  @include themify() {
+    @include custom_button_primary(
+      themed($background-tertiary),
+      themed($text-primary),
+      themed($border_color)
+    );
+  }
+
+  margin-right: 4rem;
+}
