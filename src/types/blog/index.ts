@@ -15,6 +15,7 @@ export interface IPost extends IEntity {
 
 export enum Tag {
   programming,
+  blog,
   design,
   react,
   books,

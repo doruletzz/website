@@ -1,9 +1,8 @@
-import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../features/app/hooks";
 import { setTheme } from "../../features/theme/slice";
-import { ThemeType, ITheme } from "../../types/theme";
+import { ThemeType } from "../../types/theme";
 
 import styles from "./NavBar.module.scss";
 

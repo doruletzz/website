@@ -3,6 +3,16 @@
 @use "../../../styles/card" as *;
 @use "../../../styles/button" as *;
 
+.bg {
+  // background-color: red;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100vw !important;
+  height: 100%;
+  z-index: 0;
+}
+
 .card {
   padding: 0;
   position: relative;
@@ -15,6 +25,7 @@
 }
 
 .text {
+  z-index: 2 !important;
   @media (max-width: 992px) {
     order: 1;
   }
