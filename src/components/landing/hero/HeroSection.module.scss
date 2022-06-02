@@ -26,7 +26,11 @@
 .sub_heading {
   font-family: $font-family-primary;
 
-  font-size: 1.25em;
+  font-size: 1.5em;
+  font-weight: 700;
+
+  font-style: oblique;
+
   @include themify() {
     color: themed($text-primary);
   }
@@ -64,7 +68,6 @@
   display: block;
   font-family: $font-family-primary;
   font-weight: 700;
-  font-style: oblique;
 
   padding: 0 !important;
   margin: 0 !important;

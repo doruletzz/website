@@ -1,12 +1,12 @@
 import React from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
-import Header from "../../../components/Header";
+import Header from "../Header";
 
 import { FaBook } from "react-icons/fa";
 
 import styles from "./WorkSection.module.scss";
-import { useAppSelector } from "../../../features/app/hooks";
-import { ThemeType } from "../../../types/theme";
+import { useAppSelector } from "../../features/app/hooks";
+import { ThemeType } from "../../types/theme";
 
 const WorkSection = () => {
   const theme = useAppSelector((state) => state.theme);
@@ -23,7 +23,7 @@ const WorkSection = () => {
           <Row>
             <div className={styles.header}>
               <Header
-                content={"SOME OF MY WORKS"}
+                content={"My Works"}
                 icon={<FaBook />}
                 sectionLink="#works"
               />

@@ -3,7 +3,7 @@ import HeroSection from "../../components/landing/hero/HeroSection";
 import ToolSection from "../../components/landing/tools/ToolSection";
 import BlogSection from "./blog/BlogSection";
 import ContactSection from "./contact/ContactSection";
-import WorkSection from "./works/WorkSection";
+import WorkSection from "../../components/works/WorkSection";
 
 import styles from "./LandingPage.module.scss";
 

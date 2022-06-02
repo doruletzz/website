@@ -105,7 +105,7 @@ const ToolSection = () => {
             <Col lg={5} xs={12} md={10} className={styles.text}>
               <div className={styles.header}>
                 <Header
-                  content={"TOOLS FOR THE JOB"}
+                  content={"Tools For The Job"}
                   icon={<FaToolbox />}
                   sectionLink="#tools"
                 />
@@ -114,11 +114,12 @@ const ToolSection = () => {
                 Technologies that i use day to day
               </h1>
               <p className={styles.content}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus
-                sed integer pulvinar quam scelerisque. Arcu hendrerit ut aliquet
-                lorem vitae sit. Ut ornare sed iaculis blandit nulla
+                My usual tech stack for building web applications is: MySQL,
+                Express, React and NodeJS. I mostly focus on writing clean code,
+                regardless of language or framework, and using design patters
+                for creating an optimal solution.
               </p>
-              <Button className={styles.btn_primary}>Hire me</Button>
+              <Button className={styles.btn_primary}>View Github</Button>
             </Col>
           </Row>
         </Container>

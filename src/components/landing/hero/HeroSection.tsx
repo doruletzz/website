@@ -1,4 +1,3 @@
-import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { FaHouseUser } from "react-icons/fa";
 import Header from "../../Header";
@@ -21,7 +20,7 @@ const HeroSection = () => {
             <div className={styles.header}>
               <div>
                 <Header
-                  content={"LOCATED IN CLUJ-NAPOCA, ROMANIA"}
+                  content={"Located In Cluj-Napoca, Romania"}
                   icon={<FaHouseUser />}
                   sectionLink="#hero"
                 />

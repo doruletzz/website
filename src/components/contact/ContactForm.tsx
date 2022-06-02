@@ -29,8 +29,6 @@ const ContactForm = () => {
     const description = (form.elements.namedItem("content") as HTMLInputElement)
       .value;
 
-    console.log(EMAILJS_PUBLIC_KEY, EMAILJS_SERVER_ID, EMAILJS_TEMPLATE_ID);
-
     emailjs
       .send(
         EMAILJS_SERVER_ID,
