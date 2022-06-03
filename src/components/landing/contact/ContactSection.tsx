@@ -1,10 +1,8 @@
-import React from "react";
 import { Container, Col, Row, Button } from "react-bootstrap";
 import { FaGithub, FaLinkedin, FaMailBulk, FaTwitter } from "react-icons/fa";
 import { IoMdMailOpen } from "react-icons/io";
-import { Link, useNavigate, useHref } from "react-router-dom";
-import ContactForm from "../../../components/contact/ContactForm";
-import Header from "../../../components/Header";
+import ContactForm from "../../contact/ContactForm";
+import Header from "../../Header";
 import { useAppSelector } from "../../../features/app/hooks";
 import { ThemeType } from "../../../types/theme";
 
@@ -12,7 +10,6 @@ import styles from "./ContactSection.module.scss";
 
 const ContactSection = () => {
   const theme = useAppSelector((state) => state.theme);
-  const navigate = useNavigate();
 
   return (
     <section id="contact" className={styles[`theme__${ThemeType[theme.type]}`]}>
@@ -22,16 +19,18 @@ const ContactSection = () => {
             <ContactForm />
           </Col>
           <Col>
-            <Header
-              content={"Get In Touch"}
-              icon={<FaMailBulk />}
-              sectionLink="#contact"
-            />
+            <div className={styles.header}>
+              <Header
+                content={"Get In Touch"}
+                icon={<FaMailBulk />}
+                sectionLink="#contact"
+              />
+            </div>
             <h1 className={styles.heading}>Reach Out</h1>
             <p className={styles.content}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus
-              sed integer pulvinar quam scelerisque. Arcu hendrerit ut aliquet
-              lorem vitae sit. Ut ornare sed iaculis blandit nulla
+              Want to connect? Find me online on social media or write me
+              directly via email, i'm always available and eager to meeting new
+              people.
             </p>
 
             <span>

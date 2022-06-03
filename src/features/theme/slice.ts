@@ -7,7 +7,7 @@ type ThemeState = {
 };
 
 const initialState: ThemeState = {
-  type: await getThemeFromLocalStorage(),
+  type: getThemeFromLocalStorage(),
 };
 
 export const themeSlice = createSlice({

@@ -33,7 +33,14 @@
 }
 
 .brand {
+  font-weight: 700;
+
   @include themify() {
     color: themed($text-primary) !important;
+  }
+
+  &:hover {
+    color: $highlight-secondary !important;
+    transition: none;
   }
 }

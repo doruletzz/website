@@ -3,7 +3,6 @@
 @use "../../../styles/button" as *;
 
 .content {
-  padding-top: 2rem;
   @media (max-width: 479px) {
     text-align: center;
 
@@ -12,7 +11,7 @@
 }
 
 .header {
-  margin-top: 2rem;
+  margin-top: 9rem;
 
   @include themify() {
     color: themed($text-secondary);
@@ -52,6 +51,7 @@
   margin-right: auto;
   margin-bottom: 1rem;
 
+  margin-top: 5rem;
   padding-bottom: 2rem;
 
   @media (max-width: 768px) {

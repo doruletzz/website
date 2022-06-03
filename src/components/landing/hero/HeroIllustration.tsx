@@ -1,4 +1,4 @@
-import { motion, useIsPresent } from "framer-motion";
+import { motion } from "framer-motion";
 
 type IllustrationProps = {
   width: string;

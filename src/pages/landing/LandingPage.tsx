@@ -1,8 +1,7 @@
-import React from "react";
 import HeroSection from "../../components/landing/hero/HeroSection";
 import ToolSection from "../../components/landing/tools/ToolSection";
-import BlogSection from "./blog/BlogSection";
-import ContactSection from "./contact/ContactSection";
+import BlogSection from "../../components/landing/blog/BlogSection";
+import ContactSection from "../../components/landing/contact/ContactSection";
 import WorkSection from "../../components/works/WorkSection";
 
 import styles from "./LandingPage.module.scss";

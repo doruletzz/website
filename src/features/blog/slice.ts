@@ -4,7 +4,6 @@ import { IPost, PostError } from "../../types/blog";
 import { ThemeType } from "../../types/theme";
 import { SERVER_URL } from "../../utils/constants";
 import { AppThunk } from "../app/store";
-import { getThemeFromLocalStorage, setThemeToLocalStorage } from "./utils";
 
 type BlogState = {
   posts: Array<IPost>;

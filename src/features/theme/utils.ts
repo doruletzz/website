@@ -1,6 +1,6 @@
 import { ThemeType } from "../../types/theme";
 
-export const getThemeFromLocalStorage = async (): Promise<ThemeType> => {
+export const getThemeFromLocalStorage = (): ThemeType => {
   const theme = localStorage.getItem("theme");
   return theme !== null
     ? ThemeType[theme as keyof typeof ThemeType]

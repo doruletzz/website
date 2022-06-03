@@ -1,14 +1,15 @@
 @use "../styles/card" as *;
 
 @use "../styles/theme" as *;
+
 .div {
   display: inline-block;
-  margin-bottom: -2rem !important;
+  margin-bottom: 0rem !important;
 }
 
 .icon {
   padding-left: 1rem;
-  margin-bottom: 1rem !important;
+  margin-bottom: 0rem !important;
 
   text-decoration: none;
 

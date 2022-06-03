@@ -3,9 +3,11 @@
 @use "../../styles/card" as *;
 
 .header {
-  margin-top: 2rem;
-  margin-bottom: 1.25rem;
+  @include themify() {
+    color: themed($text-secondary);
+  }
 }
+
 .container {
   margin: 0 !important;
   padding: 0 !important;

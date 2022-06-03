@@ -1,16 +1,7 @@
 @use "../../../styles/theme" as *;
-
 @use "../../../styles/button" as *;
 
-@use "../../../styles/card" as *;
-
 .header {
-  margin-bottom: 1.125rem;
-  font-family: $font-family-secondary;
-  font-weight: 400;
-
-  font-size: 1.125rem;
-
   @include themify() {
     color: themed($text-secondary);
   }
@@ -32,13 +23,22 @@
   font-family: $font-family-content;
   font-weight: 400;
 
-  font-size: 1.125rem;
+  font-size: 1rem;
 
   @include themify() {
     color: themed($text-secondary);
   }
 }
 
-.wrapper {
-  margin-bottom: 4rem !important;
+.button {
+  font-family: $font-family-secondary;
+  @include themify() {
+    @include custom_button_primary(
+      themed($background-tertiary),
+      themed($text-primary),
+      themed($border_color)
+    );
+  }
+
+  margin-right: 4rem;
 }
