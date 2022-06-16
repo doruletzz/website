@@ -8,6 +8,7 @@ import { ThemeType } from "./types/theme";
 
 import { Routes, Route, Navigate } from "react-router-dom";
 import BlogPost from "./components/blog/BlogPost";
+import BlogPage from "./pages/blog/BlogPage";
 
 function App() {
   const { type } = useAppSelector((state) => state.theme);
@@ -18,6 +19,7 @@ function App() {
         <Container>
           <NavBar />
           <Routes>
+            <Route path="/blog/" element={<BlogPage />} />
             <Route path="/home" element={<LandingPage />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/" element={<Navigate to="/home" />} />

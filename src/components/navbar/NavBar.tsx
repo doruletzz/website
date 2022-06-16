@@ -1,5 +1,5 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../features/app/hooks";
 import { setTheme } from "../../features/theme/slice";
 import { ThemeType } from "../../types/theme";
@@ -26,8 +26,12 @@ const NavBar = () => {
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
             <Nav>
-              <Nav.Link as={Link} to="/about" className={styles.navlink}>
-                about
+              <Nav.Link
+                target="_blank"
+                href={"http://resume.dorletz.com"}
+                className={styles.navlink}
+              >
+                resume
               </Nav.Link>
 
               <Nav.Link as={Link} to="/works" className={styles.navlink}>

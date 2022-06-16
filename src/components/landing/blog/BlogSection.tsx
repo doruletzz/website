@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaBrain } from "react-icons/fa";
-import BlogPostCardContainer from "../../blog/BlogPostCardContainer";
+import FixedBlogPostCardContainer from "../../blog/FixedBlogPostCardContainer";
 import Header from "../../Header";
 import { useAppSelector } from "../../../features/app/hooks";
 import { ThemeType } from "../../../types/theme";
@@ -37,7 +37,7 @@ const BlogSection = () => {
             </p> */}
           </Col>
           <Col>
-            <BlogPostCardContainer />
+            <FixedBlogPostCardContainer />
           </Col>
         </Row>
       </Container>

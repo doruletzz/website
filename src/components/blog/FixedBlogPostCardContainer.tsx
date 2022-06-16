@@ -2,18 +2,21 @@ import React, { useEffect } from "react";
 import { Container, Row, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../features/app/hooks";
-import { getAllPosts } from "../../features/blog/slice";
+import { getAllPosts, getPosts } from "../../features/blog/slice";
+import { PAGE_SIZE } from "../../utils/constants";
 import BlogPostCard from "./BlogPostCard";
 
-import styles from "./BlogPostCardContainer.module.scss";
+import styles from "./FixedBlogPostCardContainer.module.scss";
 
-const BlogPostCardContainer = () => {
+const FixedBlogPostCardContainer = () => {
   const { posts, isFetching, error } = useAppSelector((state) => state.blog);
 
   const dispatch = useAppDispatch();
 
+  const FIRST_PAGE = 1;
+
   useEffect(() => {
-    dispatch(getAllPosts());
+    dispatch(getPosts(FIRST_PAGE, 4));
   }, []);
 
   if (isFetching) return <Spinner animation="border" />;
@@ -38,4 +41,4 @@ const BlogPostCardContainer = () => {
   );
 };
 
-export default BlogPostCardContainer;
+export default FixedBlogPostCardContainer;

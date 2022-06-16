@@ -1,9 +1,15 @@
-import { useState } from "react";
+import { ReactElement, useState } from "react";
+import { IconType } from "react-icons";
 
 import styles from "./Header.module.scss";
 
-// TODO: make appropriate prop types
-const Header = ({ content, icon, sectionLink }: any) => {
+type HeaderProps = {
+  content: string;
+  icon: ReactElement<IconType>;
+  sectionLink: string;
+};
+
+const Header = ({ content, icon, sectionLink }: HeaderProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
