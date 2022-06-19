@@ -1,29 +1,31 @@
-import { Container, Col, Row, Button } from "react-bootstrap";
-import { FaGithub, FaLinkedin, FaMailBulk, FaTwitter } from "react-icons/fa";
-import { IoMdMailOpen } from "react-icons/io";
-import ContactForm from "../../contact/ContactForm";
-import Header from "../../Header";
-import { useAppSelector } from "../../../features/app/hooks";
-import { ThemeType } from "../../../types/theme";
+import { Container, Col, Row, Button, Image } from 'react-bootstrap';
+import { FaGithub, FaLinkedin, FaMailBulk, FaTwitter } from 'react-icons/fa';
+import { IoMdMailOpen } from 'react-icons/io';
+import ContactForm from '../../contact/ContactForm';
+import Header from '../../Header';
+import { useAppSelector } from '../../../features/app/hooks';
+import { ThemeType } from '../../../types/theme';
 
-import styles from "./ContactSection.module.scss";
+import EmailIllustration from '../../../assets/email-illustration.svg';
+
+import styles from './ContactSection.module.scss';
 
 const ContactSection = () => {
   const theme = useAppSelector((state) => state.theme);
 
   return (
-    <section id="contact" className={styles[`theme__${ThemeType[theme.type]}`]}>
-      <Container className="m-0 p-0">
+    <section id='contact' className={styles[`theme__${ThemeType[theme.type]}`]}>
+      <Container className={styles.container}>
         <Row>
-          <Col>
+          <Col lg={6} md={12} className={styles.form}>
             <ContactForm />
           </Col>
-          <Col>
+          <Col lg={4} md={12} className={styles.rhs}>
             <div className={styles.header}>
               <Header
-                content={"Get In Touch"}
+                content={'Get In Touch'}
                 icon={<FaMailBulk />}
-                sectionLink="#contact"
+                sectionLink='#contact'
               />
             </div>
             <h1 className={styles.heading}>Reach Out</h1>
@@ -33,39 +35,41 @@ const ContactSection = () => {
               people.
             </p>
 
-            <span>
+            <Image
+              src={EmailIllustration}
+              className={styles.email_illustration}
+            />
+            <br />
+
+            <span className={styles.button_group}>
               <Button
                 onClick={() =>
-                  window.location.assign("http://twitter.com/dorletz")
+                  window.location.assign('http://twitter.com/dorletz')
                 }
-                className={styles.button}
-              >
+                className={styles.button}>
                 <FaTwitter />
               </Button>
               <Button
                 onClick={() =>
-                  window.location.assign("http://github.com/doruletzz")
+                  window.location.assign('http://github.com/doruletzz')
                 }
-                className={styles.button}
-              >
+                className={styles.button}>
                 <FaGithub />
               </Button>
               <Button
                 onClick={() =>
                   window.location.assign(
-                    "https://www.linkedin.com/in/doru-doros-598046236/"
+                    'https://www.linkedin.com/in/doru-doros-598046236/'
                   )
                 }
-                className={styles.button}
-              >
+                className={styles.button}>
                 <FaLinkedin />
               </Button>
               <Button
                 onClick={() =>
-                  window.location.assign("mailto:dorosdorulucian@gmail.com")
+                  window.location.assign('mailto:dorosdorulucian@gmail.com')
                 }
-                className={styles.button}
-              >
+                className={styles.button}>
                 <IoMdMailOpen />
               </Button>
             </span>

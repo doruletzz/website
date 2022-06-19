@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { Container, Row, Spinner, Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { Waypoint } from "react-waypoint";
-import { useAppDispatch, useAppSelector } from "../../features/app/hooks";
-import { getAllPosts, getPosts } from "../../features/blog/slice";
-import { PAGE_SIZE } from "../../utils/constants";
-import BlogPostCard from "./BlogPostCard";
+import React, { useEffect, useState } from 'react';
+import { Container, Row, Spinner, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { Waypoint } from 'react-waypoint';
+import { useAppDispatch, useAppSelector } from '../../features/app/hooks';
+import { getAllPosts, getPosts } from '../../features/blog/slice';
+import { PAGE_SIZE } from '../../utils/constants';
+import BlogPostCard from './BlogPostCard';
 
-import styles from "./BlogPostCardContainer.module.scss";
+import styles from './BlogPostCardContainer.module.scss';
 
 const BlogPostCardContainer = () => {
   const { posts, isFetching, error } = useAppSelector((state) => state.blog);
@@ -26,12 +26,12 @@ const BlogPostCardContainer = () => {
     dispatch(getPosts(page, PAGE_SIZE));
   }, [page]);
 
-  if (isFetching) return <Spinner animation="border" />;
+  if (isFetching) return <Spinner animation='border' />;
 
   if (error) return <p>{error.message}</p>;
 
   return (
-    <Container fluid className="m-0 p-0">
+    <Container fluid className='m-0 p-0'>
       <Row>
         {posts.map(({ title, summary, createdAt, slug }, idx) => (
           <Col
@@ -40,14 +40,13 @@ const BlogPostCardContainer = () => {
             md={6}
             xl={6}
             key={idx}
-            className={styles.blog_post_card}
-          >
-            <Link to={"/blog/" + slug}>
+            className={styles.blog_post_card}>
+            <Link to={'/blog/' + slug}>
               <BlogPostCard
                 title={title}
                 summary={summary}
                 date={createdAt}
-                time="5 min"
+                time='5 min'
               />
             </Link>
           </Col>
@@ -59,9 +58,9 @@ const BlogPostCardContainer = () => {
             }}
           />
         ) : (
-          <Row className="text-center pt-2">
-            <div className="text-center">
-              <Spinner animation="border" className={styles.spinner} />
+          <Row className='text-center pt-2'>
+            <div className='text-center'>
+              <Spinner animation='border' className={styles.spinner} />
             </div>
           </Row>
         )}

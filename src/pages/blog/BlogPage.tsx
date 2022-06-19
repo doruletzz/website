@@ -1,9 +1,9 @@
-import React from "react";
-import BlogPostCardContainer from "../../components/blog/BlogPostContainer";
+import React from 'react';
+import BlogPostCardContainer from '../../components/blog/BlogPostContainer';
 
 const BlogPage = () => {
   return (
-    <section className="pb-2">
+    <section className='pb-2'>
       <BlogPostCardContainer />
     </section>
   );

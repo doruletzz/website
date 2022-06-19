@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { Col, Container, Row, Spinner } from "react-bootstrap";
-import { useParams } from "react-router";
-import { useAppDispatch, useAppSelector } from "../../features/app/hooks";
-import { getAllPosts } from "../../features/blog/slice";
-import { IPost } from "../../types/blog";
+import React, { useEffect, useState } from 'react';
+import { Col, Container, Row, Spinner } from 'react-bootstrap';
+import { useParams } from 'react-router';
+import { useAppDispatch, useAppSelector } from '../../features/app/hooks';
+import { getAllPosts } from '../../features/blog/slice';
+import { IPost } from '../../types/blog';
 
-import Markdown from "marked-react";
+import Markdown from 'marked-react';
 
-import styles from "./BlogPost.module.scss";
-import { ThemeType } from "../../types/theme";
+import styles from './BlogPost.module.scss';
+import { ThemeType } from '../../types/theme';
 
 const BlogPost = () => {
   const theme = useAppSelector((state) => state.theme);
@@ -27,7 +27,7 @@ const BlogPost = () => {
     }
   }, [posts]);
 
-  if (isFetching) return <Spinner animation="border" />;
+  if (isFetching) return <Spinner animation='border' />;
 
   if (error) return <p>{error.message}</p>;
 
@@ -35,7 +35,7 @@ const BlogPost = () => {
     <>
       {post ? (
         <div className={styles[`theme__${ThemeType[theme.type]}`]}>
-          <Container fluid className="m-0 p-0">
+          <Container fluid className='m-0 p-0'>
             <Row className={styles.content}>
               <Col lg={4} md={12} xs={12}>
                 <h1>{post.title}</h1>

@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
-import { Container, Row, Spinner } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../../features/app/hooks";
-import { getAllPosts, getPosts } from "../../features/blog/slice";
-import { PAGE_SIZE } from "../../utils/constants";
-import BlogPostCard from "./BlogPostCard";
+import React, { useEffect } from 'react';
+import { Container, Row, Spinner } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from '../../features/app/hooks';
+import { getAllPosts, getPosts } from '../../features/blog/slice';
+import { PAGE_SIZE } from '../../utils/constants';
+import BlogPostCard from './BlogPostCard';
 
-import styles from "./FixedBlogPostCardContainer.module.scss";
+import styles from './FixedBlogPostCardContainer.module.scss';
 
 const FixedBlogPostCardContainer = () => {
   const { posts, isFetching, error } = useAppSelector((state) => state.blog);
@@ -19,20 +19,20 @@ const FixedBlogPostCardContainer = () => {
     dispatch(getPosts(FIRST_PAGE, 4));
   }, []);
 
-  if (isFetching) return <Spinner animation="border" />;
+  if (isFetching) return <Spinner animation='border' />;
 
   if (error) return <p>{error.message}</p>;
 
   return (
-    <Container fluid className="m-0 p-0">
-      {posts.map(({ title, summary, createdAt, slug }, idx) => (
+    <Container fluid className='m-0 p-0'>
+      {posts.slice(0, 4).map(({ title, summary, createdAt, slug }, idx) => (
         <Row key={idx} className={styles.blog_post_card}>
-          <Link to={"/blog/" + slug}>
+          <Link to={'/blog/' + slug}>
             <BlogPostCard
               title={title}
               summary={summary}
               date={createdAt}
-              time="5 min"
+              time='5 min'
             />
           </Link>
         </Row>

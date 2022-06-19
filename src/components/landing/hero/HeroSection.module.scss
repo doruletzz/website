@@ -3,6 +3,11 @@
 @use "../../../styles/button" as *;
 
 .content {
+  @media (max-width: 992px) {
+    padding-top: 0;
+    text-align: center;
+  }
+
   @media (max-width: 479px) {
     text-align: center;
 
@@ -11,7 +16,7 @@
 }
 
 .header {
-  margin-top: 9rem;
+  margin-top: 6rem;
 
   @include themify() {
     color: themed($text-secondary);
@@ -51,16 +56,10 @@
   margin-right: auto;
   margin-bottom: 1rem;
 
-  margin-top: 5rem;
-  padding-bottom: 2rem;
+  margin-top: 2rem;
 
-  @media (max-width: 768px) {
-    text-align: center;
-
-    visibility: hidden;
+  @media (max-width: 992px) {
     display: none;
-    opacity: 0;
-    padding-top: 0;
   }
 }
 
@@ -72,13 +71,13 @@
   padding: 0 !important;
   margin: 0 !important;
 
-  font-size: 6.5rem;
+  font-size: 6rem;
   @include themify() {
     color: themed($text-primary);
   }
 
-  @media (max-width: 479px) {
-    font-size: 6rem;
+  @media (max-width: 992px) {
+    font-size: 5rem;
   }
 }
 

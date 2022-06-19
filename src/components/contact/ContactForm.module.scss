@@ -3,7 +3,6 @@
 @use "../../styles/button" as *;
 
 .form {
-  background-color: red;
   border-radius: 0px !important;
   box-sizing: border-box;
   @include themify() {
@@ -25,6 +24,7 @@
           background-color: themed($background-tertiary);
           border: 0.125rem solid themed(text-secondary) !important;
           box-shadow: 0px 0.25rem 0px themed(text-secondary);
+          color: themed($text-primary);
 
           &:active,
           &:focus {
@@ -32,6 +32,8 @@
             box-shadow: 0px 0.5rem 0px themed($text-secondary);
           }
         }
+        transition: none;
+
         padding-top: 2rem;
       }
 
@@ -49,6 +51,9 @@
           background-color: themed($background-tertiary);
           border: 0.125rem solid themed($text-secondary) !important;
           box-shadow: 0px 0.25rem 0px themed($text-secondary);
+          color: themed($text-primary);
+
+          transition: none;
 
           &:active,
           &:focus {

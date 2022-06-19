@@ -1,6 +1,6 @@
-@use "../styles/card" as *;
+@use '../styles/card' as *;
 
-@use "../styles/theme" as *;
+@use '../styles/theme' as *;
 
 .div {
   display: inline-block;
@@ -20,7 +20,7 @@
   }
 
   @media (max-width: 479px) {
-    font-size: 1rem !important;
+    font-size: 0.67rem !important;
   }
 }
 
@@ -31,13 +31,13 @@
   font-family: $font-family-secondary !important;
   font-weight: 400 !important;
 
-  font-size: 1.125rem !important;
+  font-size: 1rem !important;
 
   margin-bottom: 0.5rem !important;
 
   margin-right: 1rem !important;
 
   @media (max-width: 479px) {
-    font-size: 1rem !important;
+    font-size: 0.75rem !important;
   }
 }

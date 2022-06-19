@@ -52,8 +52,8 @@ current server side implementation: **[server](https://github.com/doruletzz/blog
    3. Redirect Pages
       - [ ] Redirect to Error Page (404)
    4. Blog Page
-      - [ ] Blog Page Container
-      - [ ] Blog Display Page w/ working examples and dates
+      - [x] Blog Page Container
+      - [x] Blog Display Page w/ working examples and dates
    5. Works Page
       - [ ] Work Page Container
       - [ ] 2 work page examples
@@ -61,10 +61,8 @@ current server side implementation: **[server](https://github.com/doruletzz/blog
       - [ ] design in figma
       - [ ] 1 Page with details
    7. Footer
-
       - [ ] navlinks to every page
       - [ ] contact component
-
    8. Todo
       - [x] write todo list
 
@@ -75,7 +73,7 @@ current server side implementation: **[server](https://github.com/doruletzz/blog
    2. Illustration
       - [ ] Tools Illustration
       - [ ] Blog Illustration
-      - [ ] Form Illustration
+      - [x] Form Illustration
 
 3. Backend
-   1. [ ] Pagination for Post Fetching
+   1. [x] Pagination for Post Fetching

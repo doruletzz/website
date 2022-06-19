@@ -1,6 +1,58 @@
 @use "../../../styles/theme" as *;
 @use "../../../styles/button" as *;
 
+.container {
+  position: relative;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.form {
+  @media (max-width: 992px) {
+    order: 2;
+  }
+
+  margin-bottom: 2rem;
+  z-index: 10;
+}
+
+.rhs {
+  @media (max-width: 992px) {
+    order: 1;
+
+    .email_illustration {
+      display: none;
+    }
+  }
+  margin-bottom: 2rem;
+
+  position: relative;
+
+  .email_illustration {
+    max-height: 40%;
+    margin-top: -2rem;
+  }
+
+  .button_group {
+    position: absolute;
+    bottom: 0;
+
+    .button {
+      font-family: $font-family-secondary;
+      @include themify() {
+        @include custom_button_primary(
+          themed($background-tertiary),
+          themed($text-primary),
+          themed($border_color)
+        );
+      }
+
+      bottom: 0;
+      margin-right: 2rem;
+    }
+  }
+}
+
 .header {
   @include themify() {
     color: themed($text-secondary);
@@ -19,7 +71,7 @@
 }
 
 .content {
-  margin-bottom: 1.125rem;
+  margin-bottom: 4.125rem;
   font-family: $font-family-content;
   font-weight: 400;
 
@@ -28,17 +80,4 @@
   @include themify() {
     color: themed($text-secondary);
   }
-}
-
-.button {
-  font-family: $font-family-secondary;
-  @include themify() {
-    @include custom_button_primary(
-      themed($background-tertiary),
-      themed($text-primary),
-      themed($border_color)
-    );
-  }
-
-  margin-right: 4rem;
 }

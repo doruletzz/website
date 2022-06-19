@@ -1,7 +1,7 @@
-import { ReactElement, useState } from "react";
-import { IconType } from "react-icons";
+import { ReactElement, useState } from 'react';
+import { IconType } from 'react-icons';
 
-import styles from "./Header.module.scss";
+import styles from './Header.module.scss';
 
 type HeaderProps = {
   content: string;
@@ -20,17 +20,16 @@ const Header = ({ content, icon, sectionLink }: HeaderProps) => {
       }}
       onMouseLeave={() => {
         setIsHovered(false);
-      }}
-    >
+      }}>
       <span>
         <h4 className={styles.text}>
-          {content}{" "}
+          {content.toUpperCase()}{' '}
           {isHovered && (
             <a href={sectionLink} className={styles.icon}>
               {icon}
             </a>
-          )}{" "}
-        </h4>{" "}
+          )}{' '}
+        </h4>{' '}
       </span>
     </div>
   );

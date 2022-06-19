@@ -1,10 +1,10 @@
-import { Container, Nav, Navbar } from "react-bootstrap";
-import { Link, Navigate } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../../features/app/hooks";
-import { setTheme } from "../../features/theme/slice";
-import { ThemeType } from "../../types/theme";
+import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Link, Navigate } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from '../../features/app/hooks';
+import { setTheme } from '../../features/theme/slice';
+import { ThemeType } from '../../types/theme';
 
-import styles from "./NavBar.module.scss";
+import styles from './NavBar.module.scss';
 
 const NavBar = () => {
   const { type } = useAppSelector((state) => state.theme);
@@ -13,32 +13,30 @@ const NavBar = () => {
 
   return (
     <div className={styles[`theme__${ThemeType[type]}`]}>
-      <Navbar className={styles.navbar} fixed="top" expand="sm">
+      <Navbar className={styles.navbar} fixed='top' expand='sm'>
         <Container className={styles.container}>
           <Navbar.Brand
             as={Link}
-            to="/home"
+            to='/home'
             onClick={() => window.scrollTo({ top: 0 })}
-            className={styles.brand}
-          >
+            className={styles.brand}>
             dor-
           </Navbar.Brand>
           <Navbar.Toggle />
-          <Navbar.Collapse className="justify-content-end">
+          <Navbar.Collapse className='justify-content-end'>
             <Nav>
               <Nav.Link
-                target="_blank"
-                href={"http://resume.dorletz.com"}
-                className={styles.navlink}
-              >
+                target='_blank'
+                href={'http://resume.dorletz.com'}
+                className={styles.navlink}>
                 resume
               </Nav.Link>
 
-              <Nav.Link as={Link} to="/works" className={styles.navlink}>
+              <Nav.Link as={Link} to='/works' className={styles.navlink}>
                 works
               </Nav.Link>
 
-              <Nav.Link as={Link} to="/blog" className={styles.navlink}>
+              <Nav.Link as={Link} to='/blog' className={styles.navlink}>
                 blog
               </Nav.Link>
 
@@ -50,8 +48,7 @@ const NavBar = () => {
                     )
                   );
                 }}
-                className={styles.navlink}
-              >
+                className={styles.navlink}>
                 {ThemeType[type]}
               </Nav.Link>
             </Nav>

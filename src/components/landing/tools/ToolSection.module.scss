@@ -3,11 +3,28 @@
 @use "../../../styles/card" as *;
 @use "../../../styles/button" as *;
 
+.container {
+  position: relative;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.container:before {
+  content: "";
+  @include themify() {
+    background-color: themed($background-secondary);
+  }
+  position: absolute;
+  top: -3rem;
+  bottom: -3rem;
+  left: -9999px;
+  right: -2000px;
+}
+
 .card {
   padding: 0;
   position: relative;
   margin: 0 auto;
-  margin-bottom: 2.25rem;
 
   @include themify() {
     @include custom_card(themed($background-tertiary), themed($border_color));
@@ -22,6 +39,7 @@
 }
 
 .cards {
+  z-index: 2 !important;
   @media (max-width: 992px) {
     order: 2;
   }
@@ -48,6 +66,14 @@
   font-family: $font-family-content;
 
   height: 6rem;
+}
+
+.tools_illustration {
+  width: 100%;
+  margin-top: -2rem;
+  @media (max-width: 992px) {
+    display: none;
+  }
 }
 
 .title {
@@ -112,7 +138,9 @@
 }
 
 .btn_primary {
-  margin-bottom: 2.25rem;
+  position: absolute;
+
+  bottom: 0;
 
   @include themify() {
     @include custom_button_primary(

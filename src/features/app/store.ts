@@ -1,18 +1,18 @@
-import { configureStore, Action } from "@reduxjs/toolkit";
-import { ThunkAction } from "redux-thunk";
+import { configureStore, Action } from '@reduxjs/toolkit';
+import { ThunkAction } from 'redux-thunk';
 
-import themeReducer from "../theme/slice";
-import blogReducer from "../blog/slice";
+import themeReducer from '../theme/slice';
+import blogReducer from '../blog/slice';
 
 export const store = configureStore({
   reducer: {
     blog: blogReducer,
-    theme: themeReducer,
+    theme: themeReducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
-      serializableCheck: false,
-    }),
+      serializableCheck: false
+    })
 });
 
 export type RootState = ReturnType<typeof store.getState>;

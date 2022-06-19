@@ -1,9 +1,9 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import axios from "axios";
-import { IPost, PostError } from "../../types/blog";
-import { ThemeType } from "../../types/theme";
-import { PAGE_SIZE, SERVER_URL } from "../../utils/constants";
-import { AppThunk } from "../app/store";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import axios from 'axios';
+import { IPost, PostError } from '../../types/blog';
+import { ThemeType } from '../../types/theme';
+import { PAGE_SIZE, SERVER_URL } from '../../utils/constants';
+import { AppThunk } from '../app/store';
 
 type BlogState = {
   posts: Array<IPost>;
@@ -14,11 +14,11 @@ type BlogState = {
 const initialState: BlogState = {
   posts: [],
   isFetching: false,
-  error: null,
+  error: null
 };
 
 export const themeSlice = createSlice({
-  name: "theme",
+  name: 'theme',
   initialState,
   reducers: {
     fetchPosts: (state) => {
@@ -34,8 +34,8 @@ export const themeSlice = createSlice({
         (v, i, a) => a.findIndex((v2) => v.id === v2.id) === i
       );
       state.isFetching = false;
-    },
-  },
+    }
+  }
 });
 
 export const { actions, reducer } = themeSlice;
@@ -45,7 +45,7 @@ export const { fetchPosts, errorFetchPosts, receivePosts } = actions;
 export const getPosts = (page: number, pageSize: number): AppThunk => {
   return async (dispatch) => {
     axios
-      .get(SERVER_URL + "post/", { params: { page, pageSize } })
+      .get(SERVER_URL + 'post/', { params: { page, pageSize } })
       .then(({ data }) => {
         console.log(data);
         data.forEach((e: IPost) =>
@@ -65,7 +65,7 @@ export const getAllPosts = (): AppThunk => {
     dispatch(fetchPosts());
 
     axios
-      .get(SERVER_URL + "post/")
+      .get(SERVER_URL + 'post/')
       .then(({ data }) => {
         console.log(data);
         data.forEach((e: IPost) =>

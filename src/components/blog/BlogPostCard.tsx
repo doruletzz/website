@@ -1,9 +1,9 @@
-import React from "react";
-import { Card } from "react-bootstrap";
-import { useAppSelector } from "../../features/app/hooks";
-import { ThemeType } from "../../types/theme";
+import React from 'react';
+import { Card } from 'react-bootstrap';
+import { useAppSelector } from '../../features/app/hooks';
+import { ThemeType } from '../../types/theme';
 
-import styles from "./BlogPostCard.module.scss";
+import styles from './BlogPostCard.module.scss';
 
 type BlogPostCardProps = {
   title: string;

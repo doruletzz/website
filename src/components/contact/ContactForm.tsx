@@ -1,17 +1,17 @@
-import React, { FormEvent } from "react";
+import React, { FormEvent } from 'react';
 
-import emailjs from "@emailjs/browser";
+import emailjs from '@emailjs/browser';
 
-import { Form, Button } from "react-bootstrap";
-import { useAppSelector } from "../../features/app/hooks";
-import { ThemeType } from "../../types/theme";
+import { Form, Button } from 'react-bootstrap';
+import { useAppSelector } from '../../features/app/hooks';
+import { ThemeType } from '../../types/theme';
 
-import styles from "./ContactForm.module.scss";
+import styles from './ContactForm.module.scss';
 import {
   EMAILJS_PUBLIC_KEY,
   EMAILJS_SERVER_ID,
-  EMAILJS_TEMPLATE_ID,
-} from "../../utils/constants";
+  EMAILJS_TEMPLATE_ID
+} from '../../utils/constants';
 
 const ContactForm = () => {
   const theme = useAppSelector((state) => state.theme);
@@ -24,9 +24,9 @@ const ContactForm = () => {
       return;
     }
 
-    const name = (form.elements.namedItem("name") as HTMLInputElement).value;
-    const email = (form.elements.namedItem("email") as HTMLInputElement).value;
-    const description = (form.elements.namedItem("content") as HTMLInputElement)
+    const name = (form.elements.namedItem('name') as HTMLInputElement).value;
+    const email = (form.elements.namedItem('email') as HTMLInputElement).value;
+    const description = (form.elements.namedItem('content') as HTMLInputElement)
       .value;
 
     emailjs
@@ -35,14 +35,14 @@ const ContactForm = () => {
         EMAILJS_TEMPLATE_ID,
         {
           from_name: name,
-          to_name: "dorletz",
+          to_name: 'dorletz',
           from_email: email,
-          message: description,
+          message: description
         },
         EMAILJS_PUBLIC_KEY
       )
       .then(() => {
-        alert("message sent :)");
+        alert('message sent :)');
       })
       .catch((error) => alert(JSON.stringify(error)));
   };
@@ -51,42 +51,42 @@ const ContactForm = () => {
     <div className={styles[`theme__${ThemeType[theme.type]}`]}>
       <Form className={styles.form} onSubmit={handleSubmit}>
         <Form.Group className={styles.group}>
-          <Form.FloatingLabel label="Full Name" className={styles.label}>
+          <Form.FloatingLabel label='Full Name' className={styles.label}>
             <Form.Control
               required
-              name="name"
-              type="text"
-              placeholder="Jon Doe"
+              name='name'
+              type='text'
+              placeholder='Jon Doe'
               className={styles.control}
             />
           </Form.FloatingLabel>
         </Form.Group>
 
         <Form.Group className={styles.group}>
-          <Form.FloatingLabel label="Email" className={styles.label}>
+          <Form.FloatingLabel label='Email' className={styles.label}>
             <Form.Control
               required
-              name="email"
-              type="email"
-              placeholder="mycooladdress@email.com"
+              name='email'
+              type='email'
+              placeholder='mycooladdress@email.com'
               className={styles.control}
             />
           </Form.FloatingLabel>
         </Form.Group>
 
         <Form.Group className={styles.group}>
-          <Form.FloatingLabel label="Description" className={styles.label}>
+          <Form.FloatingLabel label='Description' className={styles.label}>
             <Form.Control
               required
-              name="content"
+              name='content'
               className={styles.text_area_control}
-              as="textarea"
-              placeholder="Hello World"
+              as='textarea'
+              placeholder='Hello World'
             />
           </Form.FloatingLabel>
         </Form.Group>
 
-        <Button type="submit" className={styles.button}>
+        <Button type='submit' className={styles.button}>
           Send
         </Button>
       </Form>

@@ -8,11 +8,26 @@
   }
 }
 
+.container:before {
+  content: "";
+  @include themify() {
+    background-color: themed($background-secondary) !important;
+  }
+  position: absolute;
+  top: 15rem;
+  bottom: -2rem;
+  left: -9999px;
+  right: -2000px;
+}
+
 .container {
+  position: relative;
   margin: 0 !important;
   padding: 0 !important;
   justify-content: center;
   text-align: center;
+
+  width: 100%;
 }
 
 .card {
