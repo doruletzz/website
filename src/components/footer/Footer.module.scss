@@ -1,0 +1,102 @@
+@use '../../styles/theme' as *;
+
+.container {
+  position: relative;
+
+  margin-top: 2rem;
+
+  padding-top: 3rem;
+
+  padding-bottom: 2rem;
+
+  @include themify() {
+    color: themed($background-primary);
+  }
+
+  z-index: 2;
+
+  .row {
+    margin-bottom: 2rem;
+  }
+}
+
+.container:before {
+  content: '';
+  @include themify() {
+    background-color: themed($text-primary);
+  }
+  position: absolute;
+  top: 0rem;
+  bottom: 0rem;
+  left: -9999px;
+  right: -2000px;
+
+  z-index: -1;
+}
+
+.brand {
+  padding: 0;
+  padding: 0 !important;
+  margin-bottom: 0.5rem;
+
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.header {
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+
+  font-family: $font-family-content;
+
+  @include themify() {
+    color: themed($background-tertiary) !important;
+  }
+}
+
+.description {
+  font-size: 0.85rem;
+  padding: 0 !important;
+
+  padding-right: 4rem !important;
+
+  font-family: $font-family-content;
+
+  @include themify() {
+    color: themed($background-tertiary) !important;
+  }
+
+  a {
+    text-decoration: none;
+
+    @include themify() {
+      color: themed($background-tertiary) !important;
+    }
+
+    &:hover {
+      color: $highlight-secondary !important;
+      cursor: pointer;
+    }
+  }
+}
+
+.item {
+  font-size: 1rem;
+  background-color: inherit !important;
+  border: none !important;
+
+  padding: 0 !important;
+  margin: 0;
+
+  @include themify() {
+    color: themed($background-tertiary);
+  }
+
+  text-decoration: none;
+  transition: none !important;
+
+  &:hover {
+    color: $highlight-secondary !important;
+    cursor: pointer;
+  }
+}

@@ -5,16 +5,17 @@ import ContactSection from '../../components/landing/contact/ContactSection';
 import WorkSection from '../../components/works/WorkSection';
 
 import styles from './LandingPage.module.scss';
+import { Container } from 'react-bootstrap';
 
 const LandingPage = () => {
   return (
-    <div className={styles.container}>
+    <Container className={styles.container}>
       <HeroSection />
       <WorkSection />
       <BlogSection />
       <ToolSection />
       <ContactSection />
-    </div>
+    </Container>
   );
 };
 

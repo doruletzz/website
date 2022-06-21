@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Col, Container, Row, Spinner } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { useAppDispatch, useAppSelector } from '../../features/app/hooks';
-import { getAllPosts } from '../../features/blog/slice';
-import { IPost } from '../../types/blog';
+import { getAllPosts } from '../../features/post/slice';
+import { IPost } from '../../types/post';
 
 import Markdown from 'marked-react';
 

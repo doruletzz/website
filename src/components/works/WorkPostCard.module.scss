@@ -1,0 +1,45 @@
+@use '../../styles/theme' as *;
+
+@use '../../styles/card' as *;
+
+.card {
+  padding: 0;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 2.25rem;
+
+  @include themify() {
+    @include custom_card(themed($background-tertiary), themed($border_color));
+  }
+  max-width: 38rem;
+
+  .img {
+    margin-bottom: 0.75rem;
+    padding: 0 !important;
+  }
+
+  .title {
+    padding-left: 1rem;
+    text-align: left;
+    font-family: $font-family-primary;
+    font-size: 1.25rem;
+    font-weight: 700;
+
+    @include themify() {
+      color: themed($text-primary);
+    }
+  }
+
+  .text {
+    padding-left: 1rem;
+    text-align: left;
+    font-size: 1rem;
+    font-family: $font-family-content;
+
+    @include themify() {
+      color: themed($text-secondary);
+    }
+
+    margin-bottom: 1rem !important;
+  }
+}

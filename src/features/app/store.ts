@@ -2,7 +2,7 @@ import { configureStore, Action } from '@reduxjs/toolkit';
 import { ThunkAction } from 'redux-thunk';
 
 import themeReducer from '../theme/slice';
-import blogReducer from '../blog/slice';
+import blogReducer from '../post/slice';
 
 export const store = configureStore({
   reducer: {

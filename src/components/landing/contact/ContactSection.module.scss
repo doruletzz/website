@@ -1,5 +1,5 @@
-@use "../../../styles/theme" as *;
-@use "../../../styles/button" as *;
+@use '../../../styles/theme' as *;
+@use '../../../styles/button' as *;
 
 .container {
   position: relative;
@@ -12,8 +12,8 @@
     order: 2;
   }
 
-  margin-bottom: 2rem;
   z-index: 10;
+  margin-bottom: 2rem;
 }
 
 .rhs {
@@ -24,13 +24,12 @@
       display: none;
     }
   }
-  margin-bottom: 2rem;
 
   position: relative;
 
   .email_illustration {
     max-height: 40%;
-    margin-top: -2rem;
+    margin-top: -4rem;
   }
 
   .button_group {
@@ -51,6 +50,8 @@
       margin-right: 2rem;
     }
   }
+
+  margin-bottom: 2rem;
 }
 
 .header {

@@ -9,6 +9,7 @@ import { ThemeType } from './types/theme';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import BlogPost from './components/blog/BlogPost';
 import BlogPage from './pages/blog/BlogPage';
+import Footer from './components/footer/Footer';
 
 function App() {
   const { type } = useAppSelector((state) => state.theme);
@@ -24,6 +25,8 @@ function App() {
             <Route path='/blog/:slug' element={<BlogPost />} />
             <Route path='/' element={<Navigate to='/home' />} />
           </Routes>
+
+          <Footer />
         </Container>
       </div>
     </div>

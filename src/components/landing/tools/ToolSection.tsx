@@ -15,6 +15,7 @@ import otherIcon from '../../../assets/other-illustration.png';
 import otherIconDark from '../../../assets/other-illustration-dark.png';
 
 import ToolsIllustration from '../../../assets/tools-illustration.svg';
+import ToolsIllustrationDark from '../../../assets/tools-illustration-dark.svg';
 
 import styles from './ToolSection.module.scss';
 

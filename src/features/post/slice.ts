@@ -1,17 +1,17 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { IPost, PostError } from '../../types/blog';
+import { IPost, PostError, Tag } from '../../types/post';
 import { ThemeType } from '../../types/theme';
 import { PAGE_SIZE, SERVER_URL } from '../../utils/constants';
 import { AppThunk } from '../app/store';
 
-type BlogState = {
+type PostState = {
   posts: Array<IPost>;
   isFetching: boolean;
   error?: PostError | null;
 };
 
-const initialState: BlogState = {
+const initialState: PostState = {
   posts: [],
   isFetching: false,
   error: null
@@ -29,7 +29,6 @@ export const themeSlice = createSlice({
       state.isFetching = false;
     },
     receivePosts: (state, action: PayloadAction<Array<IPost>>) => {
-      console.log(state.posts, action.payload);
       state.posts = [...state.posts, ...action.payload].filter(
         (v, i, a) => a.findIndex((v2) => v.id === v2.id) === i
       );
@@ -42,16 +41,22 @@ export const { actions, reducer } = themeSlice;
 
 export const { fetchPosts, errorFetchPosts, receivePosts } = actions;
 
-export const getPosts = (page: number, pageSize: number): AppThunk => {
+export const getPosts = (
+  tags: Array<string>,
+  page: number,
+  pageSize: number
+): AppThunk => {
   return async (dispatch) => {
+    console.log(tags);
+
     axios
-      .get(SERVER_URL + 'post/', { params: { page, pageSize } })
-      .then(({ data }) => {
-        console.log(data);
-        data.forEach((e: IPost) =>
+      .get(SERVER_URL + 'post/', { params: { tags, page, pageSize } })
+      .then((res) => {
+        console.log(res, res.data);
+        res.data.forEach((e: IPost) =>
           console.log(e, e.createdAt, e.updatedAt, typeof e.createdAt)
         );
-        dispatch(receivePosts(data));
+        dispatch(receivePosts(res.data));
       })
       .catch((error) => {
         console.error(error);
@@ -71,7 +76,7 @@ export const getAllPosts = (): AppThunk => {
         data.forEach((e: IPost) =>
           console.log(e, e.createdAt, e.updatedAt, typeof e.createdAt)
         );
-        dispatch(receivePosts(data));
+        dispatch(receiveBlogPosts(data));
       })
       .catch((error) => {
         console.error(error);

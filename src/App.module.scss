@@ -1,14 +1,16 @@
-@use "./styles/theme" as *;
+@use './styles/theme' as *;
 
 ::selection {
   @include themify() {
-    background-color: themed("text-secondary");
-    color: themed("background-tertiary");
+    background-color: themed('text-secondary');
+    color: themed('background-tertiary');
   }
 }
 
 html,
 body {
+  height: 100%;
+  margin: 0;
   overflow-x: hidden;
 }
 

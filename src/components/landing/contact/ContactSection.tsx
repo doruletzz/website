@@ -20,7 +20,7 @@ const ContactSection = () => {
           <Col lg={6} md={12} className={styles.form}>
             <ContactForm />
           </Col>
-          <Col lg={4} md={12} className={styles.rhs}>
+          <Col lg={5} md={12} className={styles.rhs}>
             <div className={styles.header}>
               <Header
                 content={'Get In Touch'}

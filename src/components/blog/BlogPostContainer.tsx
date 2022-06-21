@@ -3,7 +3,8 @@ import { Container, Row, Spinner, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Waypoint } from 'react-waypoint';
 import { useAppDispatch, useAppSelector } from '../../features/app/hooks';
-import { getAllPosts, getPosts } from '../../features/blog/slice';
+import { getAllPosts, getPosts } from '../../features/post/slice';
+import { Tag } from '../../types/post';
 import { PAGE_SIZE } from '../../utils/constants';
 import BlogPostCard from './BlogPostCard';
 
@@ -23,7 +24,7 @@ const BlogPostCardContainer = () => {
   //   }, []);
 
   useEffect(() => {
-    dispatch(getPosts(page, PAGE_SIZE));
+    dispatch(getPosts([Tag[Tag.blog]], page, PAGE_SIZE));
   }, [page]);
 
   if (isFetching) return <Spinner animation='border' />;
@@ -33,24 +34,27 @@ const BlogPostCardContainer = () => {
   return (
     <Container fluid className='m-0 p-0'>
       <Row>
-        {posts.map(({ title, summary, createdAt, slug }, idx) => (
-          <Col
-            xs={12}
-            sm={12}
-            md={6}
-            xl={6}
-            key={idx}
-            className={styles.blog_post_card}>
-            <Link to={'/blog/' + slug}>
-              <BlogPostCard
-                title={title}
-                summary={summary}
-                date={createdAt}
-                time='5 min'
-              />
-            </Link>
-          </Col>
-        ))}
+        {posts.map(
+          ({ title, summary, createdAt, slug, tags }, idx) =>
+            Tag[tags[0] as keyof typeof Tag] === Tag.blog && (
+              <Col
+                xs={12}
+                sm={12}
+                md={6}
+                xl={6}
+                key={idx}
+                className={styles.blog_post_card}>
+                <Link to={'/blog/' + slug}>
+                  <BlogPostCard
+                    title={title}
+                    summary={summary}
+                    date={createdAt}
+                    time='5 min'
+                  />
+                </Link>
+              </Col>
+            )
+        )}
         {!isFetching ? (
           <Waypoint
             onEnter={() => {

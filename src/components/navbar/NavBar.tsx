@@ -13,7 +13,7 @@ const NavBar = () => {
 
   return (
     <div className={styles[`theme__${ThemeType[type]}`]}>
-      <Navbar className={styles.navbar} fixed='top' expand='sm'>
+      <Navbar className={styles.navbar} expand='sm'>
         <Container className={styles.container}>
           <Navbar.Brand
             as={Link}
@@ -29,7 +29,7 @@ const NavBar = () => {
                 target='_blank'
                 href={'http://resume.dorletz.com'}
                 className={styles.navlink}>
-                resume
+                <span>resume</span>
               </Nav.Link>
 
               <Nav.Link as={Link} to='/works' className={styles.navlink}>

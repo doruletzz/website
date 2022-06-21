@@ -1,9 +1,9 @@
-import { IEntity } from "../entity";
-import { IError } from "../utils/error";
+import { IEntity } from '../entity';
+import { IError } from '../utils/error';
 
 export interface IPost extends IEntity {
   slug: string;
-  coverImg?: string;
+  imageUrl?: string;
   title: string;
   summary: string;
   content: string;
@@ -15,10 +15,11 @@ export interface IPost extends IEntity {
 
 export enum Tag {
   programming,
+  works,
   blog,
   design,
   react,
-  books,
+  books
 }
 
 export interface PostError extends IError {}
