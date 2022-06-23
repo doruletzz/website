@@ -16,7 +16,7 @@ const Footer = () => {
     <footer className={styles[`theme__${ThemeType[type]}`]}>
       <Container fluid className={styles.container}>
         <Row className={styles.row}>
-          <Col md={7}>
+          <Col sm={12} md={7}>
             <Row>
               <NavItem className={styles.brand}>dor-</NavItem>
             </Row>
@@ -28,8 +28,10 @@ const Footer = () => {
             </Row>
           </Col>
 
-          <Col md={2}>
-            <Row className={styles.header}>LINKS</Row>
+          <Col xs={4} md={2}>
+            <Row className={styles.header}>
+              <a>LINKS</a>
+            </Row>
             <Row
               className={styles.item}
               as={NavLink}
@@ -44,8 +46,10 @@ const Footer = () => {
               blog
             </Row>
           </Col>
-          <Col md={2}>
-            <Row className={styles.header}>SOCIAL</Row>
+          <Col xs={4} md={2}>
+            <Row className={styles.header}>
+              <a>SOCIAL</a>
+            </Row>
             <Row
               className={styles.item}
               as={NavLink}
@@ -75,11 +79,13 @@ const Footer = () => {
               email
             </Row>
           </Col>
-          <Col md={1}>
-            <Row className={styles.header}>THEME</Row>
+          <Col xs={4} md={1}>
+            <Row className={styles.header}>
+              <a>THEME</a>
+            </Row>
             <Row>
               <NavItem
-                className={styles.item}
+                className={styles.theme_switch}
                 onClick={() => {
                   dispatch(
                     setTheme(
@@ -87,7 +93,7 @@ const Footer = () => {
                     )
                   );
                 }}>
-                {ThemeType[type]}
+                <a>{ThemeType[type]}</a>
               </NavItem>
             </Row>
           </Col>

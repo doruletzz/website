@@ -27,7 +27,7 @@ const WorkSection = () => {
             <h4 className={styles.header}></h4>
           </Row>
           <Row>
-            <FixedWorkPostContainer />
+            <FixedWorkPostContainer amount={2} />
           </Row>
         </Col>
       </Container>

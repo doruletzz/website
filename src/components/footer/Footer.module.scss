@@ -35,8 +35,6 @@
 }
 
 .brand {
-  padding: 0;
-  padding: 0 !important;
   margin-bottom: 0.5rem;
 
   font-size: 1.25rem;
@@ -56,7 +54,6 @@
 
 .description {
   font-size: 0.85rem;
-  padding: 0 !important;
 
   padding-right: 4rem !important;
 
@@ -80,12 +77,33 @@
   }
 }
 
+.theme_switch {
+  font-size: 1rem;
+  background-color: inherit !important;
+  border: none !important;
+
+  margin: 0;
+
+  @include themify() {
+    color: themed($background-tertiary);
+  }
+
+  text-decoration: none;
+  transition: none !important;
+
+  &:hover {
+    color: $highlight-secondary !important;
+    cursor: pointer;
+  }
+}
+
 .item {
   font-size: 1rem;
   background-color: inherit !important;
   border: none !important;
 
-  padding: 0 !important;
+  padding: inherit !important;
+
   margin: 0;
 
   @include themify() {

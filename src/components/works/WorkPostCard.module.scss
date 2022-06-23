@@ -4,6 +4,7 @@
 
 .card {
   padding: 0;
+  text-align: left;
   position: relative;
   margin: 0 auto;
   margin-bottom: 2.25rem;
@@ -25,14 +26,19 @@
     font-size: 1.25rem;
     font-weight: 700;
 
+    text-decoration: none;
+
     @include themify() {
       color: themed($text-primary);
+    }
+
+    &:hover {
+      color: $highlight-secondary;
     }
   }
 
   .text {
     padding-left: 1rem;
-    text-align: left;
     font-size: 1rem;
     font-family: $font-family-content;
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { getPosts } from '../../features/post/slice';
 import WorkPostCard from './WorkPostCard';
 
 const WorkPostContainer = () => {

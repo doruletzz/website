@@ -22,18 +22,67 @@
   -webkit-transition: none !important;
   transition: none !important;
 
+  @media (max-width: 698px) {
+    margin-left: 1rem !important;
+  }
+
   @include themify() {
     color: themed($text-primary) !important;
+    fill: themed($text-primary) !important;
+    stroke: themed($text-primary) !important;
   }
 
   &:hover {
     color: $highlight-secondary !important;
+    fill: $highlight-secondary !important;
+    stroke: $highlight-secondary !important;
+
     transition: none;
+  }
+
+  .icon {
+    height: 1.5rem;
+    width: auto;
+
+    margin-left: 0.5rem;
+
+    fill: inherit !important;
+
+    @media (min-width: 992px) {
+      display: none;
+    }
+  }
+
+  .text {
+    color: inherit;
+    vertical-align: middle;
+    -webkit-transition: none !important;
+    transition: none !important;
+    text-decoration: none;
+
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
+
+  .theme_icon {
+    height: 1.5rem;
+    width: auto;
+
+    margin-left: 1rem;
+
+    fill: inherit !important;
+
+    @media (min-width: 992px) {
+      height: 1rem;
+    }
   }
 }
 
 .brand {
   font-weight: 700;
+
+  font-size: 1.5rem !important;
 
   @include themify() {
     color: themed($text-primary) !important;

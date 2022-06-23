@@ -15,7 +15,7 @@ const ContactSection = () => {
 
   return (
     <section id='contact' className={styles[`theme__${ThemeType[theme.type]}`]}>
-      <Container className={styles.container}>
+      <Container fluid className={styles.container}>
         <Row>
           <Col lg={6} md={12} className={styles.form}>
             <ContactForm />

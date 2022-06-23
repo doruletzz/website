@@ -3,6 +3,8 @@
 @use '../../styles/card' as *;
 
 .header {
+  text-align: center;
+
   @include themify() {
     color: themed($text-secondary);
   }

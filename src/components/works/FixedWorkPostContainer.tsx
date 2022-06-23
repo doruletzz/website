@@ -5,7 +5,11 @@ import { getPosts } from '../../features/post/slice';
 import { Tag } from '../../types/post';
 import WorkPostCard from './WorkPostCard';
 
-const WorkPostContainer = () => {
+type FixedWorkPostContainerProps = {
+  amount: number;
+};
+
+const FixedWorkPostContainer = ({ amount }: FixedWorkPostContainerProps) => {
   const { posts, isFetching, error } = useAppSelector((state) => state.blog);
 
   const dispatch = useAppDispatch();
@@ -29,21 +33,26 @@ const WorkPostContainer = () => {
     'Website is still under construction... here will be a short summary about the project and a link to it';
 
   return (
-    <Container fluid>
+    <>
       {posts
         .filter(
           (post) =>
             post.tags &&
             Tag[post.tags[0] as keyof typeof Tag] === Tag.programming
         )
-        .slice(0, 2)
-        .map(({ title, summary, imageUrl, slug, tags }) => (
+        .slice(0, amount)
+        .map(({ title, summary, imageUrl, slug }) => (
           <Col lg={12} md={6}>
-            <WorkPostCard imageSrc={imageUrl} title={title} summary={summary} />
+            <WorkPostCard
+              slug={slug}
+              imageSrc={imageUrl}
+              title={title}
+              summary={summary}
+            />
           </Col>
         ))}
-    </Container>
+    </>
   );
 };
 
-export default WorkPostContainer;
+export default FixedWorkPostContainer;

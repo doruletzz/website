@@ -9,7 +9,7 @@ import { Container } from 'react-bootstrap';
 
 const LandingPage = () => {
   return (
-    <Container className={styles.container}>
+    <Container fluid className={styles.container}>
       <HeroSection />
       <WorkSection />
       <BlogSection />
