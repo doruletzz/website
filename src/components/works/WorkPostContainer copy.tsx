@@ -1,12 +1,20 @@
-import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import React, { useEffect } from 'react';
+import { Col, Container, Row, Spinner } from 'react-bootstrap';
+import { useAppDispatch, useAppSelector } from '../../features/app/hooks';
 import { getPosts } from '../../features/post/slice';
+import { Tag } from '../../types/post';
 import WorkPostCard from './WorkPostCard';
 
 const WorkPostContainer = () => {
+  const { posts, isFetching, error } = useAppSelector((state) => state.blog);
+
+  const dispatch = useAppDispatch();
+
+  const FIRST_PAGE = 1;
+
   useEffect(() => {
-    dispatch(getPosts([Tag[Tag.works]], page, PAGE_SIZE));
-  }, [page]);
+    dispatch(getPosts([Tag[Tag.programming]], FIRST_PAGE, 2));
+  }, []);
 
   if (isFetching) return <Spinner animation='border' />;
 
@@ -21,21 +29,25 @@ const WorkPostContainer = () => {
     'Website is still under construction... here will be a short summary about the project and a link to it';
 
   return (
-    <Container fluid>
-      <Col lg={12} md={6}>
-        <WorkPostCard
-          imageSrc={IMAGE_SRC}
-          title={TITLE + 'aaa'}
-          summary={CONTENT}
-        />
-      </Col>
-      <Col lg={12} md={6}>
-        <WorkPostCard
-          imageSrc={IMAGE_SRC}
-          title={TITLE + 'aaa'}
-          summary={CONTENT}
-        />
-      </Col>
+    <Container>
+      <Row>
+        {posts
+          .filter(
+            (post) =>
+              post.tags &&
+              Tag[post.tags[0] as keyof typeof Tag] === Tag.programming
+          )
+          .map(({ title, summary, imageUrl, slug }) => (
+            <Col lg={6} md={6}>
+              <WorkPostCard
+                slug={slug}
+                imageSrc={imageUrl}
+                title={title}
+                summary={summary}
+              />
+            </Col>
+          ))}
+      </Row>
     </Container>
   );
 };

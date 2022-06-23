@@ -26,18 +26,25 @@ const FixedBlogPostCardContainer = () => {
 
   return (
     <Container fluid className='m-0 p-0'>
-      {posts.slice(0, 4).map(({ title, summary, createdAt, slug }, idx) => (
-        <Row key={idx} className={styles.blog_post_card}>
-          <Link to={'/blog/' + slug}>
-            <BlogPostCard
-              title={title}
-              summary={summary}
-              date={createdAt}
-              time='5 min'
-            />
-          </Link>
-        </Row>
-      ))}
+      {posts
+        .filter(
+          (post) =>
+            post.tags && Tag[post.tags[0] as keyof typeof Tag] === Tag.blog
+        )
+
+        .slice(0, 4)
+        .map(({ title, summary, createdAt, slug }, idx) => (
+          <Row key={idx} className={styles.blog_post_card}>
+            <Link to={'/blog/' + slug}>
+              <BlogPostCard
+                title={title}
+                summary={summary}
+                date={createdAt}
+                time='5 min'
+              />
+            </Link>
+          </Row>
+        ))}
     </Container>
   );
 };

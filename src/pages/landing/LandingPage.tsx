@@ -6,8 +6,13 @@ import WorkSection from '../../components/works/WorkSection';
 
 import styles from './LandingPage.module.scss';
 import { Container } from 'react-bootstrap';
+import { useEffect } from 'react';
 
 const LandingPage = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
+
   return (
     <Container fluid className={styles.container}>
       <HeroSection />

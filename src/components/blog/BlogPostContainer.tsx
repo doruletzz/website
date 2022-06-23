@@ -34,27 +34,29 @@ const BlogPostCardContainer = () => {
   return (
     <Container fluid className='m-0 p-0'>
       <Row>
-        {posts.map(
-          ({ title, summary, createdAt, slug, tags }, idx) =>
-            Tag[tags[0] as keyof typeof Tag] === Tag.blog && (
-              <Col
-                xs={12}
-                sm={12}
-                md={6}
-                xl={6}
-                key={idx}
-                className={styles.blog_post_card}>
-                <Link to={'/blog/' + slug}>
-                  <BlogPostCard
-                    title={title}
-                    summary={summary}
-                    date={createdAt}
-                    time='5 min'
-                  />
-                </Link>
-              </Col>
-            )
-        )}
+        {posts
+          .filter(
+            (post) =>
+              post.tags && Tag[post.tags[0] as keyof typeof Tag] === Tag.blog
+          )
+          .map(({ title, summary, createdAt, slug, tags }, idx) => (
+            <Col
+              xs={12}
+              sm={12}
+              md={6}
+              xl={6}
+              key={idx}
+              className={styles.blog_post_card}>
+              <Link to={'/blog/' + slug}>
+                <BlogPostCard
+                  title={title}
+                  summary={summary}
+                  date={createdAt}
+                  time='5 min'
+                />
+              </Link>
+            </Col>
+          ))}
         {!isFetching ? (
           <Waypoint
             onEnter={() => {
