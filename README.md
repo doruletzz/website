@@ -44,9 +44,9 @@ current server side implementation: **[server](https://github.com/doruletzz/blog
       - [x] Contact Form
       - [ ] About Text
       - [ ] Blog Text
-      - [ ] Implement every button
+      - [x] Implement every button
    2. Navbar
-      - [ ] Icons for mobile use
+      - [x] Icons for mobile use
       - [ ] Animation for navbrand
       - [ ] Icon for style change
    3. Redirect Pages
@@ -56,12 +56,12 @@ current server side implementation: **[server](https://github.com/doruletzz/blog
       - [x] Blog Display Page w/ working examples and dates
    5. Works Page
       - [ ] Work Page Container
-      - [ ] 2 work page examples
+      - [x] 2 work page examples
    6. About Page
       - [ ] design in figma
       - [ ] 1 Page with details
    7. Footer
-      - [ ] navlinks to every page
+      - [x] navlinks to every page
       - [ ] contact component
    8. Todo
       - [x] write todo list
@@ -71,7 +71,7 @@ current server side implementation: **[server](https://github.com/doruletzz/blog
    1. Animations
       - [ ] brand animation
    2. Illustration
-      - [ ] Tools Illustration
+      - [x] Tools Illustration
       - [ ] Blog Illustration
       - [x] Form Illustration
 
