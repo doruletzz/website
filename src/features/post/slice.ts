@@ -76,7 +76,7 @@ export const getAllPosts = (): AppThunk => {
         data.forEach((e: IPost) =>
           console.log(e, e.createdAt, e.updatedAt, typeof e.createdAt)
         );
-        dispatch(receiveBlogPosts(data));
+        dispatch(receivePosts(data));
       })
       .catch((error) => {
         console.error(error);

@@ -1,11 +1,11 @@
 @use './styles/theme' as *;
 
-// ::selection {
-//   @include themify() {
-//     background-color: themed('text-secondary');
-//     color: themed('background-tertiary');
-//   }
-// }
+::selection {
+  @include themify() {
+    background-color: themed('text-secondary');
+    color: themed('background-tertiary');
+  }
+}
 
 html,
 body {
