@@ -35,7 +35,8 @@ const WorkPostContainer = () => {
           .filter(
             (post) =>
               post.tags &&
-              Tag[post.tags[0] as keyof typeof Tag] === Tag.programming
+              Tag[post.tags[0].toString() as keyof typeof Tag] ===
+                Tag.programming
           )
           .map(({ title, summary, imageUrl, slug }) => (
             <Col lg={6} md={6}>

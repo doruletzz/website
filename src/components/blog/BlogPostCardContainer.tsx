@@ -37,7 +37,8 @@ const BlogPostCardContainer = () => {
         {posts
           .filter(
             (post) =>
-              post.tags && Tag[post.tags[0] as keyof typeof Tag] === Tag.blog
+              post.tags &&
+              Tag[post.tags[0].toString() as keyof typeof Tag] === Tag.blog
           )
           .map(({ title, summary, createdAt, slug, tags }, idx) => (
             <Col

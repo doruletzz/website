@@ -7,7 +7,7 @@ import { ThemeType } from '../../types/theme';
 import styles from './WorkPostCard.module.scss';
 
 type WorkPostCardProps = {
-  imageSrc: string;
+  imageSrc?: string;
   title: string;
   summary: string;
   slug: string;

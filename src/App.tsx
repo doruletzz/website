@@ -11,6 +11,7 @@ import BlogPost from './components/blog/BlogPost';
 import BlogPage from './pages/blog/BlogPage';
 import Footer from './components/footer/Footer';
 import WorksPage from './pages/works/WorksPage';
+import WorkPost from './components/works/WorkPost';
 
 function App() {
   const { type } = useAppSelector((state) => state.theme);
@@ -25,6 +26,7 @@ function App() {
             <Route path='/works/' element={<WorksPage />} />
             <Route path='/home' element={<LandingPage />} />
             <Route path='/blog/:slug' element={<BlogPost />} />
+            <Route path='/works/:slug' element={<WorkPost />} />
             <Route path='/' element={<Navigate to='/home' />} />
           </Routes>
 

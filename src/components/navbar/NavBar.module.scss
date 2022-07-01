@@ -1,15 +1,19 @@
 @use '../../styles/theme' as *;
 
+.container {
+  padding: 0 1.5rem;
+}
+
 .navbar {
+  z-index: 999;
+
   height: 4rem;
-  margin: 0;
-  padding: 0;
   text-decoration: none;
 
   font-family: $font-family-primary;
 
   @include themify() {
-    background-color: themed($background-primary) !important;
+    background-color: themed($background-primary);
     background-opacity: 0.4;
   }
 }

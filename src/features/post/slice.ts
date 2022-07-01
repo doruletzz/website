@@ -41,14 +41,28 @@ export const { actions, reducer } = themeSlice;
 
 export const { fetchPosts, errorFetchPosts, receivePosts } = actions;
 
+export const getPost = (slug: string): AppThunk => {
+  return async (dispatch) => {
+    axios
+      .get(SERVER_URL + 'post/' + slug)
+      .then((res) => {
+        console.log('data', res, res.data);
+
+        dispatch(receivePosts([res.data]));
+      })
+      .catch((error) => {
+        console.error(error);
+        dispatch(errorFetchPosts(error));
+      });
+  };
+};
+
 export const getPosts = (
   tags: Array<string>,
   page: number,
   pageSize: number
 ): AppThunk => {
   return async (dispatch) => {
-    console.log(tags);
-
     axios
       .get(SERVER_URL + 'post/', { params: { tags, page, pageSize } })
       .then((res) => {

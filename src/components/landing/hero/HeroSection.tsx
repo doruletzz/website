@@ -27,7 +27,7 @@ const HeroSection = () => {
               </div>
             </div>
             <div>
-              <h1 className={styles.heading}>Hello World!</h1>
+              <h1 className={styles.heading}>Hello, World!</h1>
               <h3 className={styles.sub_heading}>
                 i'm dorletz, a <b className={styles.highlighted}>passionate</b>{' '}
                 frontend developer

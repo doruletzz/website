@@ -7,11 +7,10 @@ import { IPost, Tag } from '../../types/post';
 
 import Markdown from 'marked-react';
 
-import styles from './BlogPost.module.scss';
+import styles from './WorkPost.module.scss';
 import { ThemeType } from '../../types/theme';
-import { PAGE_SIZE } from '../../utils/constants';
 
-const BlogPost = () => {
+const WorkPost = () => {
   const theme = useAppSelector((state) => state.theme);
 
   const { slug } = useParams();
@@ -22,7 +21,8 @@ const BlogPost = () => {
   const [post, setPost] = useState<IPost | undefined>(undefined);
 
   useEffect(() => {
-    if (!posts.length) dispatch(getPost(slug ? slug : ''));
+    console.log(slug);
+    if (!posts.length) dispatch(getPost(slug ? slug : 'hello-world'));
     else {
       setPost(posts.find((post) => post.slug === slug));
     }
@@ -48,7 +48,7 @@ const BlogPost = () => {
                 {post.summary && <p>{post.summary}</p>}
                 {post.tags && <p>{post.tags.map((tag) => `${tag} `)}</p>}
               </Col>
-              <Col lg={6} md={12} xs={12} className={styles.content}>
+              <Col className={styles.content}>
                 <Markdown children={post.content} />
               </Col>
             </Row>
@@ -61,4 +61,4 @@ const BlogPost = () => {
   );
 };
 
-export default BlogPost;
+export default WorkPost;

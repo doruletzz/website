@@ -29,7 +29,8 @@ const FixedBlogPostCardContainer = () => {
       {posts
         .filter(
           (post) =>
-            post.tags && Tag[post.tags[0] as keyof typeof Tag] === Tag.blog
+            post.tags &&
+            Tag[post.tags[0].toString() as keyof typeof Tag] === Tag.blog
         )
 
         .slice(0, 4)
